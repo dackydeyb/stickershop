@@ -1,0 +1,432 @@
+/*Global Settings*/
+::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+    overflow: hidden;
+}
+
+@font-face {
+    font-family: 'Playtime';
+    src: url('Fonts/playtime/Playtime.otf') format('opentype');
+    font-family: 'Futura';
+    src: url('Fonts/futura/futur.ttf') format('truetype');
+    
+}
+
+* {
+    text-decoration: none;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+a {
+    color: black;
+}
+
+body {
+    margin: 0;
+    overflow-x: hidden;
+    height: 100vh; /* Set the body height to the full viewport height */
+    position: relative; /* Add position relative to the body */
+  }
+
+section {
+    display: flex;
+    height: 100vh;
+    padding: 150px 100px 100px;
+    box-sizing: border-box;
+    scroll-snap-align: start;
+}
+  
+/* Navigation Bar */
+.kk-header__sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: #fff;
+}
+
+.kk-header__sticky-wrapper {
+    padding: 0 4.166666%;
+    position: relative;
+    z-index: 1002;
+    min-height: 60px;
+    background: #fff;
+}
+
+.kk-header__sticky-top {
+    height: 60px;
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+.kk-header__logo-container {
+    position: absolute;
+    font-family: "omega", sans-serif;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.kk-header__nav {
+    display: flex;
+    align-items: center;
+}
+
+.kk-header__nav--right {
+    margin-left: auto;
+}
+
+.hidden {
+    display: none;
+}
+
+.kk-header__nav-item {
+    margin-left: 6px;
+}
+
+.kk-header__btn {
+    display: flex;
+    align-items: center;
+    padding: 11px 6px;
+    line-height: 17px;
+    height: 57px;
+    position: relative;
+    z-index: 2;
+    min-width: 30px;
+    text-align: left;
+    background: none;
+    border: none;
+    cursor: pointer;
+    letter-spacing: 0.04em;
+    border-radius: 0;
+    font-family: inherit;
+    color: #555;
+    font-size: 1.4rem;
+}
+
+.kk-header__menu-ico {
+    position: relative;
+    display: block;
+    width: 14px;
+    height: 15px;
+    margin-right: 8px;
+}
+
+.kk-header__menu-ico .bar {
+    display: block;
+    height: 2px;
+    margin: 2px 0;
+    background-color: #555;
+    transition: all 0.2s ease-out, background 0s;
+    transform-origin: center center;
+    opacity: 1;
+}
+
+.kk-header__btn-label {
+    display: block;
+    margin: 0;
+    line-height: 17px;
+    font-size: 15px;
+}
+
+.kk-font-bold {
+    font-family: 'omega-bold', arial, helvetica, sans-serif;
+}
+
+.kk-font-upper {
+    text-transform: uppercase;
+}
+
+.kk-header__btn .label--close {
+    display: none;
+}
+
+/* Styles for the search input */
+.kk-header__search-container {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 2px 8px;
+}
+
+.kk-header__search-icon {
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+}
+
+.kk-header__search {
+    border: none;
+    font-size: 14px;
+    padding: 4px;
+}
+
+/* Styles for the profile icon */
+.kk-header__profile-link {
+    display: inline-block;
+    margin-left: 16px;
+}
+
+.kk-header__profile-icon {
+    width: 24px;
+    height: 24px;
+}
+
+
+/* Main Content */
+.scroll-container {
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    height: 100vh;
+    z-index: 10; 
+}
+
+.one {
+    background-image: url(Elements/Section1.png);
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.one .intro {
+    max-width: 995px;
+}
+
+.two {
+    background: #572796;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 120px;
+}
+  
+.title-category {
+    display: flex;
+    align-items: center;
+}
+  
+.title-category h2 {
+    margin: 0;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    font-family: 'Futura', sans-serif;
+    padding-bottom: 30px;
+}
+  
+.category-links {
+    display: flex;
+    margin-bottom: auto;
+    padding-top: 70px;
+    justify-content: space-around;
+    width: 100%;
+    border-top: 2px solid rgb(233, 230, 230);
+}
+
+  
+
+.category-links li a {
+    color: #ffeeee; /* Default link color */
+    position: relative; /* Needed for absolute positioning of pseudo-element */
+    font-weight: bold;
+    font-family: "Madimi One", sans-serif;
+    font-size: 30px;
+    z-index: 1;
+}
+    
+.category-links li a::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.5s ease-in-out;
+    z-index: -1;
+}
+
+/* Define custom properties for different pastel colors */
+.category-links li a[href="#vinyl"]::before {
+    background-color: #ffb6c1;
+}
+
+.category-links li a[href="#holographic"]::before {
+    background-color: #add8e6; 
+}
+
+.category-links li a[href="#glitter"]::before {
+    background-color: #98fb98;
+}
+
+.category-links li a[href="#paper"]::before {
+    background-color: #ffd700;
+}
+
+.category-links li a[href="#die-cut"]::before {
+    background-color: #f08080;
+}
+
+.category-links li a[href="#decal"]::before {
+    background-color: #fab472;
+}
+
+.category-links li a[href="#static-cling"]::before {
+    background-color: #d8bfd8;
+}
+
+/* Change link color on hover */
+.category-links li a:hover {
+    color: #ffffff; /* Black */
+}
+
+/* Scale the hover effect */
+.category-links li a:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+
+
+/* Moving Effect */
+.slider {
+    height: 400px;
+    margin: auto;
+    position: relative;
+    width: 100%;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+}
+
+.slide-track {
+    display: flex;
+    width: calc(250px * 16);
+    animation: scroll 140s linear infinite;
+    gap: 30px;
+}
+
+.slide-track > .slide:nth-child(1), #Eula { 
+    background-color: #55cbcd;
+}
+
+.slide-track > .slide:nth-child(2), #Navia { 
+    background-color: #f6eac2;
+}
+
+.slide-track > .slide:nth-child(3), #Nahida { 
+    background-color: #e2f0cb;
+}
+
+.slide-track > .slide:nth-child(4), #Charlotte { 
+    background-color: #ffe1e9;
+}
+
+.slide-track > .slide:nth-child(5), #Sucrose { 
+    background-color: #97c1a9;
+}
+
+.slide-track > .slide:nth-child(6), #Kirara { 
+    background-color: #e7d8cd;
+}
+
+.slide-track > .slide:nth-child(7), #Layla { 
+    background-color: #bccfed;
+}
+
+.slide-track > .slide:nth-child(8), #Collei { 
+    background-color: #b1c182;
+}
+
+
+.slide-track:hover {
+    animation-play-state: paused;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-250px * 8));
+    }
+}
+
+
+.slide {
+    height: 350px;
+    width: 250px;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border-radius: 5px 20px 5px;
+    box-shadow: 5px 5px 5px rgb(110, 21, 252);
+    perspective: 100px;
+}
+
+.slide-track img {
+    width: 100%;
+    transition: 0.2s;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+/* Image Hover effect */
+.slide-track img:hover {
+    transform: translateZ(25px);
+}
+
+/* Slider Gradient Shadows */
+.slider::before,
+.slider::after {
+  background: linear-gradient(to right, #572796 0%, rgba(255,255,255,0) 100%);
+  content: '';
+  height: 100%;
+  position: absolute;
+  width: 15%;
+  z-index: 2;
+}
+
+.slider::after {
+  background: linear-gradient(to left, #572796 0%, rgba(255,255,255,0) 100%);
+}
+
+.slider::before {
+    left: 0;
+    top: 0;
+}
+
+.slider::after {
+    right: 0;
+    top: 0;
+    transform: rotateZ('180deg');
+}
+
+.three {
+    background: #f2c6de;
+    /* background: rgb(142,180,237);
+    background: linear-gradient(180deg, rgba(142,180,237,1) 0%, rgba(214,236,236,1) 50%); */
+}
+
+.four {
+    background: #c6def1;
+    /* background: rgb(214,236,236);
+    background: linear-gradient(180deg, rgba(214,236,236,1) 0%, rgba(236,214,214,1) 50%); */
+
+}
+
+.five {
+    background: #a8c9c2;
+}
+
+.six {
+    background: #faedcb;
+}
+
