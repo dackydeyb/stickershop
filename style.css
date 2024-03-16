@@ -28,8 +28,8 @@ a {
 body {
     margin: 0;
     overflow-x: hidden;
-    height: 100vh; /* Set the body height to the full viewport height */
-    position: relative; /* Add position relative to the body */
+    height: 100vh;
+    position: relative;
   }
 
 section {
@@ -202,7 +202,7 @@ section {
 }
 
 .two {
-    background: #572796;
+    background: #0F3460;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -220,23 +220,21 @@ section {
     font-size: 24px;
     font-weight: bold;
     font-family: 'Futura', sans-serif;
-    padding-bottom: 30px;
+    padding-bottom: 15px;
 }
   
 .category-links {
     display: flex;
-    margin-bottom: auto;
-    padding-top: 70px;
+    /* margin-bottom: auto; */
+    padding-top: 60px;
     justify-content: space-around;
     width: 100%;
     border-top: 2px solid rgb(233, 230, 230);
 }
 
-  
-
 .category-links li a {
-    color: #ffeeee; /* Default link color */
-    position: relative; /* Needed for absolute positioning of pseudo-element */
+    color: #ffeeee; 
+    position: relative;
     font-weight: bold;
     font-family: "Madimi One", sans-serif;
     font-size: 30px;
@@ -284,7 +282,7 @@ section {
 
 /* Change link color on hover */
 .category-links li a:hover {
-    color: #ffffff; /* Black */
+    color: #ffffff;
 }
 
 /* Scale the hover effect */
@@ -293,12 +291,11 @@ section {
     transform-origin: left;
 }
 
-
-
 /* Moving Effect */
 .slider {
     height: 400px;
     margin: auto;
+    /* margin-top: -70px; */
     position: relative;
     width: 100%;
     display: grid;
@@ -313,36 +310,36 @@ section {
     gap: 30px;
 }
 
-.slide-track > .slide:nth-child(1), #Eula { 
+.tile:nth-child(1) .slide, .tile:nth-child(9) .slide {
     background-color: #55cbcd;
 }
 
-.slide-track > .slide:nth-child(2), #Navia { 
+.tile:nth-child(2) .slide, .tile:nth-child(10) .slide {
     background-color: #f6eac2;
 }
 
-.slide-track > .slide:nth-child(3), #Nahida { 
-    background-color: #e2f0cb;
+.tile:nth-child(3) .slide, .tile:nth-child(11) .slide {
+    background-color: #BFD8AF;
 }
 
-.slide-track > .slide:nth-child(4), #Charlotte { 
-    background-color: #ffe1e9;
+.tile:nth-child(4) .slide, .tile:nth-child(12) .slide {
+    background-color: #FF8080;
 }
 
-.slide-track > .slide:nth-child(5), #Sucrose { 
-    background-color: #97c1a9;
+.tile:nth-child(5) .slide, .tile:nth-child(13) .slide {
+    background-color: #EEE0C9;
 }
 
-.slide-track > .slide:nth-child(6), #Kirara { 
-    background-color: #e7d8cd;
+.tile:nth-child(6) .slide, .tile:nth-child(14) .slide {
+    background-color: #FFC0D9;
 }
 
-.slide-track > .slide:nth-child(7), #Layla { 
-    background-color: #bccfed;
+.tile:nth-child(7) .slide, .tile:nth-child(15) .slide {
+    background-color: #6096B4;
 }
 
-.slide-track > .slide:nth-child(8), #Collei { 
-    background-color: #b1c182;
+.tile:nth-child(8) .slide, .tile:nth-child(16) .slide {
+    background-color: #AEE2FF;
 }
 
 
@@ -359,7 +356,6 @@ section {
     }
 }
 
-
 .slide {
     height: 350px;
     width: 250px;
@@ -367,7 +363,7 @@ section {
     align-items: center;
     padding: 15px;
     border-radius: 5px 20px 5px;
-    box-shadow: 5px 5px 5px rgb(110, 21, 252);
+    /* box-shadow: 5px 5px 5px rgb(110, 21, 252); */
     perspective: 100px;
 }
 
@@ -375,6 +371,7 @@ section {
     width: 100%;
     transition: 0.2s;
     padding-top: 50px;
+    padding-right: 25px;
     padding-bottom: 50px;
 }
 
@@ -386,7 +383,7 @@ section {
 /* Slider Gradient Shadows */
 .slider::before,
 .slider::after {
-  background: linear-gradient(to right, #572796 0%, rgba(255,255,255,0) 100%);
+  background: linear-gradient(to right, #0F3460 0%, rgba(255,255,255,0) 100%);
   content: '';
   height: 100%;
   position: absolute;
@@ -395,7 +392,7 @@ section {
 }
 
 .slider::after {
-  background: linear-gradient(to left, #572796 0%, rgba(255,255,255,0) 100%);
+  background: linear-gradient(to left, #0F3460 0%, rgba(255,255,255,0) 100%);
 }
 
 .slider::before {
@@ -409,10 +406,223 @@ section {
     transform: rotateZ('180deg');
 }
 
+/* New CSS for the hover effect */
+.tile {
+    display: inline-block;
+    /* margin: 10px; */
+    text-align: left;
+    opacity: 0.99;
+    overflow: hidden;
+    position: relative;
+    border-radius: 5px 20px 5px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.05);
+}
+
+.tile:before {
+    content: '';
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 100%);
+    width: 100%;
+    height: 50%;
+    opacity: 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 2;
+    transition-property: top, opacity;
+    transition-duration: 0.3s;
+}
+  
+.tile .details {
+    font-size: 16px;
+    font-family: 'Futura', sans-serif;
+    padding: 20px;
+    color: #fff;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 3;
+}
+  
+.tile .details span {
+    display: block;
+    opacity: 0;
+    position: relative;
+    top: 100px;
+    transition-property: top, opacity;
+    transition-duration: 0.3s;
+    transition-delay: 0s;
+}
+  
+.tile .details .title {
+    line-height: 1;
+    font-weight: 600;
+    font-size: 18px;
+}
+  
+.tile .details .info {
+    line-height: 1.2;
+    margin-top: 5px;
+    font-size: 12px;
+}
+  
+.tile:focus:before,
+.tile:focus span,
+.tile:hover:before,
+.tile:hover span {
+    opacity: 1;
+}
+  
+.tile:focus:before,
+.tile:hover:before {
+    top: 50%;
+}
+  
+.tile:focus span,
+.tile:hover span {
+    top: 0;
+}
+  
+.tile:focus .title,
+.tile:hover .title {
+    transition-delay: 0.15s;
+}
+  
+.tile:focus .info,
+.tile:hover .info {
+    transition-delay: 0.25s;
+}
+
+/* Buy Now Link */
+.buynow-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 2px;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+#buynow-intro {
+    text-align: center;
+    color: whitesmoke;
+    font-family: 'Futura', sans-serif;
+    font-size: 20px;
+    padding-bottom: 20px;
+    
+}
+
+
+.fancy {
+    font-family: 'Futura', sans-serif;
+    margin-bottom: -50px;
+    background-color: transparent;
+    border: 2px solid #ffffff;
+    border-radius: 25;
+    box-sizing: border-box;
+    color: #000000;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    /* margin: 0; */
+    outline: none;
+    overflow: visible;
+    padding: 1.25em 2em;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    text-transform: none;
+    transition: all 0.3s ease-in-out;
+    user-select: none;
+    font-size: 13px;
+}
+   
+.fancy::before {
+    content: " ";
+    width: 1.5625rem;
+    height: 2px;
+    background: rgb(255, 255, 255);
+    top: 50%;
+    left: 1.5em;
+    position: absolute;
+    transform: translateY(-50%);
+    transform-origin: center;
+    transition: background 0.3s linear, width 0.3s linear;
+}
+   
+.fancy .text {
+    font-size: 1.125em;
+    line-height: 1.33333em;
+    padding-left: 2em;
+    display: block;
+    text-align: left;
+    transition: all 0.3s ease-in-out;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+   
+.fancy .top-key {
+    height: 2px;
+    width: 1.5625rem;
+    top: -2px;
+    left: 0.625rem;
+    position: absolute;
+    background: #000000;
+    transition: width 0.5s ease-out, left 0.3s ease-out;
+}
+   
+.fancy .bottom-key-1 {
+    height: 2px;
+    width: 1.5625rem;
+    right: 1.875rem;
+    bottom: -2px;
+    position: absolute;
+    background: #000000;
+    transition: width 0.5s ease-out, right 0.3s ease-out;
+}
+   
+.fancy .bottom-key-2 {
+    height: 2px;
+    width: 0.625rem;
+    right: 0.625rem;
+    bottom: -2px;
+    position: absolute;
+    background: #e8e8e8;
+    transition: width 0.5s ease-out, right 0.3s ease-out;
+}
+   
+.fancy:hover {
+    color: rgb(0, 0, 0);
+    background: rgb(255, 255, 255);
+}
+   
+.fancy:hover::before {
+    width: 0.9375rem;
+    background: rgb(0, 0, 0);
+}
+   
+.fancy:hover .text {
+    color: rgb(0, 0, 0);
+    padding-left: 1.5em;
+}
+   
+.fancy:hover .top-key {
+    left: -2px;
+    width: 0px;
+}
+   
+.fancy:hover .bottom-key-1,
+.fancy:hover .bottom-key-2 {
+    right: 0;
+    width: 0;
+}
+
 .three {
     background: #f2c6de;
-    /* background: rgb(142,180,237);
-    background: linear-gradient(180deg, rgba(142,180,237,1) 0%, rgba(214,236,236,1) 50%); */
+    background: rgb(142,180,237);
+    background: linear-gradient(180deg, rgba(142,180,237,1) 0%, rgba(214,236,236,1) 50%);
 }
 
 .four {
