@@ -1,0 +1,41 @@
+/*Global Settings*/
+::-webkit-scrollbar {
+    width: 0;
+    background: transparent;
+    overflow: hidden;
+}
+
+@font-face {
+    font-family: 'Playtime';
+    src: url('Fonts/playtime/Playtime.otf') format('opentype');
+    font-family: 'Futura';
+    src: url('Fonts/futura/futur.ttf') format('truetype');
+    
+}
+
+* {
+    text-decoration: none;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+a {
+    color: black;
+}
+
+body {
+    margin: 0;
+    overflow-x: hidden;
+    height: 100vh;
+    position: relative;
+  }
+
+section {
+    display: flex;
+    height: 100vh;
+    padding: 150px 100px 100px;
+    box-sizing: border-box;
+    scroll-snap-align: start;
+}
