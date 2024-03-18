@@ -620,9 +620,7 @@ section {
 }
 
 .three {
-    background: #f2c6de;
-    background: rgb(142,180,237);
-    background: linear-gradient(180deg, rgba(142,180,237,1) 0%, rgba(214,236,236,1) 50%);
+    background: #a14d59;
 }
 
 .four {
