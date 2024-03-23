@@ -30,6 +30,7 @@ body {
   overflow-x: hidden;
   height: 100vh;
   position: relative;
+  scroll-snap-type: x mandatory;
 }
 
 section {
@@ -38,9 +39,8 @@ section {
   height: 100vh;
   padding: 150px 100px 100px;
   box-sizing: border-box;
-  scroll-snap-align: start;
   z-index: 10;
-
+  
 }
 
 /* Navigation Bar */
@@ -56,39 +56,24 @@ nav {
   padding-left: 4.16667%;
 }
 
-
-main {
-  position: relative;
-  z-index: 2;
-  background: #F56469;
-  height: 1500px;
-  margin-bottom: 350px;
-  box-shadow: 3px 2px 2px 0px rgba(51,51,51,0.5);
+/* Main Content */
+.one {
+  background-color: #F56469;
 }
 
-main p {
-  margin: 0;
-  padding-top: 100px;
-  font-size: 100px;
-  text-align: center;
-  color: #ddd; 
+.two {
+  background: darkgreen;
+  margin-bottom: 350px;
 }
 
 /* Footer */
 footer {
   position: fixed;
   bottom: 0;
-  z-index: 1;
   width: 100%;
-  height: 25%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  height: 350px;  
+  padding-left: 50px;
   background: #4B466F;
   font-size: 100px;
   color: #F56469;
-}
-
-.margin400px {
-  margin-bottom: 25%;
 }
