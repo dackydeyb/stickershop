@@ -685,12 +685,12 @@ section {
 
 /* Footer */
 .footer {
-  position: fixed;
+  height: 33%;
   bottom: 0;
   width: 100%;
-  height: 25%;  
   padding: 0 250px;
   background: #1b1c1e;
+
 }
 
 #footer-title #footer-link-title {
