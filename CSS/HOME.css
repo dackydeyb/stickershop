@@ -688,7 +688,8 @@ section {
     background-color: #1b1c1e;
     height: 33%; /* 33% of the viewport height */
     overflow: hidden; /* to prevent overflow */
-    padding: 30px;
+    padding: 30px 250px;
+
 }
 
 .footer-container {
@@ -735,7 +736,6 @@ section {
 
 .footer-link-group {
     flex-basis: calc(16.666% - 20px); /* 6 columns with 20px margin */
-    margin-bottom: 20px;
 }
 
 .footer-link-group h4 {
