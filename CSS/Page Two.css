@@ -666,6 +666,37 @@ footer {
   gap: 20px;
 }
 
+.footer-links a {
+  position: relative; /* Add this line */
+  letter-spacing: 1px;
+  padding-bottom: 10px;
+  line-height: 1.5;
+  font-size: 13px;
+  color: #ffffff;
+  font-family: "Nunito", sans-serif;
+  text-decoration: none; /* Add this line */
+}
+
+/* Footer hover Links */
+
+.footer-links a::before {
+  content: '';
+  position: absolute;
+  bottom: 5px; /* Adjust the position of the underline */
+  left: 0;
+  width: 100%;
+  height: 2px; /* Adjust the thickness of the underline */
+  background-color: transparent; /* Set the initial color of the underline */
+  transform: scaleX(0); /* Initially scale the underline to 0 */
+  transform-origin: right;
+  transition: transform 0.5s ease-in-out, background-color 0.5s ease-in-out; /* Add a transition for smooth animation */
+}
+
+.footer-links a:hover::before {
+  transform: scaleX(1); /* Scale the underline to 100% on hover */
+  transform-origin: left; /* Start the scaling from the left */
+}
+
 /* Individual hover effects with pastel colors */
 #link-back-to-top:hover::before { background-color: #FF7F7F; } /* Deep Peach */
 #link-home:hover::before { background-color: #7F9F7F; } /* Dark Olive Green */
@@ -687,37 +718,6 @@ footer {
 #link-privacy:hover::before { background-color: #BF7F7F; } /* Dark Salmon */
 #link-contact:hover::before { background-color: #9FBF7F; } /* Dark Olive Green */
 
-.footer-links a {
-  position: relative; /* Add this line */
-  letter-spacing: 1px;
-  padding-bottom: 10px;
-  line-height: 1.5;
-  font-size: 13px;
-  color: #ffffff;
-  font-family: "Nunito", sans-serif;
-  text-decoration: none; /* Add this line */
-}
-
-.footer-links a::before {
-  content: '';
-  position: absolute;
-  bottom: 5px; /* Adjust the position of the underline */
-  left: 0;
-  width: 100%;
-  height: 2px; /* Adjust the thickness of the underline */
-  background-color: transparent; /* Set the initial color of the underline */
-  transform: scaleX(0); /* Initially scale the underline to 0 */
-  transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out; /* Add a transition for smooth animation */
-}
-
-.footer-links a:hover::before {
-  transform: scaleX(1); /* Scale the underline to 100% on hover */
-  transform-origin: left; /* Start the scaling from the left */
-}
-
-/* Define the pastel colors for each individual link */
-
-
 #yoimiya {
   -webkit-transform: scaleX(-1);
   transform: scaleX(-1);
@@ -727,11 +727,6 @@ footer {
   margin-top: -15px; /* Adjust this value */
   margin-bottom: 0; /* Adjust this value */
   filter: drop-shadow(10px 5px 10px rgb(105, 78, 28));
-}
-
-/* Hover links in FOoter */
-.footer-links li a [href="#back-to-top"]::before {
-  border-bottom: 1px solid #cf2020;
 }
 
 .footer-column > a > img {
