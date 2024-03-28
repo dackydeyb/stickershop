@@ -34,122 +34,120 @@ body {
 
 section {
   display: flex;
+  position: relative;
   height: 100vh;
   padding: 150px 100px 100px;
   box-sizing: border-box;
-  scroll-snap-align: start;
+  z-index: 10;
 }
 
 /* Navigation Bar */
-.kk-header__sticky {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 1000;
-  background: #fff;
+
+nav {
+  background-color: #f5f5f5;
+  height: 7%;
+  margin: 0 auto;
 }
 
-.kk-header__sticky-wrapper {
-  padding: 0 4.166666%;
-  position: relative;
-  z-index: 1002;
-  min-height: 60px;
-  background: #fff;
-}
-
-.kk-header__sticky-top {
-  height: 60px;
-  padding: 10px 0;
+.nav-container {
   display: flex;
+  justify-content: center;
   align-items: center;
-  justify-content: space-between;
-  position: relative;
+  padding-top: 19px;
+  /* background-color: rgb(118, 118, 218); */
+  gap: 22%;
 }
 
-.kk-header__logo-container {
-  position: absolute;
-  font-family: "omega", sans-serif;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.kk-header__nav {
+.nav-menu {
   display: flex;
+  justify-content: flex-start;
+  /* background-color: aqua; */
+  width: 20%;
+}
+
+.menu-label {
+  display: flex;
+  justify-content: center;
   align-items: center;
+  padding-left: 15px;
 }
 
-.kk-header__nav--right {
-  margin-left: auto;
-}
-
-.hidden {
+#checkbox {
   display: none;
 }
 
-.kk-header__nav-item {
-  margin-left: 6px;
-}
-
-.kk-header__btn {
-  display: flex;
-  align-items: center;
-  padding: 11px 6px;
-  line-height: 17px;
-  height: 57px;
+.toggle {
   position: relative;
-  z-index: 2;
-  min-width: 30px;
-  text-align: left;
-  background: none;
-  border: none;
+  width: 30px;
+  height: 30px;
   cursor: pointer;
-  letter-spacing: 0.04em;
-  border-radius: 0;
-  font-family: inherit;
-  color: #555;
-  font-size: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  transition-duration: .5s;
 }
 
-.kk-header__menu-ico {
-  position: relative;
-  display: block;
-  width: 14px;
-  height: 15px;
-  margin-right: 8px;
+.bars {
+  width: 100%;
+  height: 3px;
+  background-color: #1f1f1f;
+  border-radius: 4px;
 }
 
-.kk-header__menu-ico .bar {
-  display: block;
-  height: 2px;
-  margin: 2px 0;
-  background-color: #555;
-  transition: all 0.2s ease-out, background 0s;
-  transform-origin: center center;
-  opacity: 1;
+#bar2 {
+  transition-duration: .8s;
 }
 
-.kk-header__btn-label {
-  display: block;
-  margin: 0;
-  line-height: 17px;
-  font-size: 15px;
+#bar1,#bar3 {
+  width: 70%;
 }
 
-.kk-font-bold {
-  font-family: 'omega-bold', arial, helvetica, sans-serif;
+#checkbox:checked + .toggle .bars {
+  position: absolute;
+  transition-duration: .5s;
 }
 
-.kk-font-upper {
-  text-transform: uppercase;
+#checkbox:checked + .toggle #bar2 {
+  transform: scaleX(0);
+  transition-duration: .5s;
 }
 
-.kk-header__btn .label--close {
-  display: none;
+#checkbox:checked + .toggle #bar1 {
+  width: 100%;
+  transform: rotate(45deg);
+  transition-duration: .5s;
 }
 
-/* Styles for the search input */
-.kk-header__search-container {
+#checkbox:checked + .toggle #bar3 {
+  width: 100%;
+  transform: rotate(-45deg);
+  transition-duration: .5s;
+}
+
+#checkbox:checked + .toggle {
+  transition-duration: .5s;
+  transform: rotate(180deg);
+}
+
+.nav-title a {
+  display: flex;
+  justify-content: center;
+  color: #1f1f1f;
+  /* background-color: red; */
+}
+
+
+.nav-search-profile {
+  display: flex;
+  justify-content: flex-end;
+  /* background-color: aquamarine; */
+  width: 20%;
+}
+
+/* Navigation Bar Search Bar and Icon */
+.search-container {
   display: flex;
   align-items: center;
   border: 1px solid #ccc;
@@ -157,38 +155,28 @@ section {
   padding: 2px 8px;
 }
 
-.kk-header__search-icon {
+#search-icon {
   width: 16px;
   height: 16px;
   margin-right: 8px;
 }
 
-.kk-header__search {
-  border: none;
-  font-size: 14px;
-  padding: 4px;
-}
-
-/* Styles for the profile icon */
-.kk-header__profile-link {
-  display: inline-block;
-  margin-left: 16px;
-}
-
-.kk-header__profile-icon {
+#profile-icon {
+  margin-top: 3px;
+  margin-left: 10px;
   width: 24px;
   height: 24px;
 }
 
-
-/* Main Content */
-.scroll-container {
-  scroll-snap-type: y mandatory;
-  overflow-y: scroll;
-  height: 100vh;
-  z-index: 10; 
+#search-bar {
+  border: none;
+  font-size: 14px;
+  padding: 4px;
+  background-color: #f5f5f5;
 }
 
+
+/* Main Content */
 .one {
   background-image: url(../Elements/Section1.png);
   background-attachment: fixed;
@@ -197,16 +185,13 @@ section {
   background-size: cover;
 }
 
-.one .intro {
-  max-width: 995px;
-}
-
 .two {
   background: #0F3460;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding-top: 120px;
+  margin-bottom: 305px;
 }
 
 .title-category {
@@ -619,153 +604,149 @@ background: linear-gradient(to left, #0F3460 0%, rgba(255,255,255,0) 100%);
   width: 0;
 }
 
-.three {
-  padding-top: 150px;
-  background: rgb(58,126,180);
-  background: linear-gradient(90deg, rgba(58,126,180,1) 0%, rgba(252,201,69,1) 100%); 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 50px; /* Add some spacing between the intro and image containers */
-}
-
-.intro-container {
-  flex: 1; /* Allow the intro container to grow and take up remaining space */
-  padding: 40px; /* Add some padding for spacing */
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Add a subtle box shadow for depth */
-}
-
-.intro-three > p {
-  padding-bottom: 20px;
-}
-
-.section-title-three {
-  color: #eeeeee; 
-  font-family: 'Futura', sans-serif;
-  font-size: 50px;
-  letter-spacing: 3px;
-  margin-bottom: 20px; /* Add some spacing between the title and description */
-}
-
-.three > .intro-three > p {
-  color: #333333; /* Change the color to a darker shade for better contrast */
-  text-align: justify;
-  line-height: 1.5; /* Increase line-height for better readability */
-}
-
-.image-container {
-  flex: 0 0 auto; /* Prevent the image container from growing */
-  width: 400px; /* Set a fixed width for the image container */
-  height: 400px; /* Set a fixed height for the image container */
-  overflow: hidden; /* Hide any part of the image that exceeds the container */
-  border-radius: 50%; /* Make the image container circular */
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Add a subtle box shadow for depth */
-}
-
-#three-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Ensure the image fills the container while maintaining aspect ratio */
-}
-
-.four {
-  background: #c6def1;
-  /* background: rgb(214,236,236);
-  background: linear-gradient(180deg, rgba(214,236,236,1) 0%, rgba(236,214,214,1) 50%); */
-
-}
-
-.five {
-  background: #a8c9c2;
-}
-
-.six {
-  background: #faedcb;
-}
-
 /* Footer */
-.footer {
-  background-color: #1b1c1e;
-  height: 33%; /* 33% of the viewport height */
-  overflow: hidden; /* to prevent overflow */
-  padding: 30px 250px;
-
-}
-
-.footer-container {
+footer {
+  position: fixed;
+  bottom: 0;
+  z-index: -1;
   width: 100%;
-  margin: 0 auto;
-  padding: 0 20px;
+  height: 305px; 
+  padding: 0 250px;
+  background: #1d1d1d;
 }
 
 .footer-title {
-  text-align: center;
-  padding-bottom: 20px;
-  /* border-bottom: 1px solid white; */
+  padding-top: 35px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #494949;
 }
 
-.footer-title a {
-  color: #eeeeee;
+.footer-title, a, p {
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ccc;
   font-family: 'Futura', sans-serif;
-  font-size: 25px;
+}
+
+.footer-title > #footer-title-h2, #footer-title-link {
   letter-spacing: 2px;
-  text-decoration: none;
 }
 
-.footer-title a:hover {
-  text-decoration: underline;
-}
-
-.footer-title span {
-  color: #eeeeee;
-  font-family: 'Futura', sans-serif;
+.footer-title > #footer-title-p {
+  padding-top: 5px;
   font-size: 12px;
   letter-spacing: 1px;
-  display: block;
-  margin-top: 5px;
 }
 
+/* Footer Links */
 .footer-links {
+  display: grid;
+  grid-template-columns: auto repeat(5, 1fr) auto; /* Added an extra 'auto' column for profile links */
+  align-items: center;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  gap: 30px;
+  border-bottom: 1px solid #494949;
+  text-align: left;
+}
+
+.footer-links > li {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  border-top: 1px solid white;
-  border-bottom: 1px solid white; /* Added border bottom */
-  padding: 20px 0; /* Adjusted padding */
+  flex-direction: column;
+  align-items: flex-start;
 }
 
-.footer-link-group {
-  flex-basis: calc(16.666% - 20px); /* 6 columns with 20px margin */
+/* New styles for the list item containing profile links */
+.footer-links > li:last-child {
+  flex-direction: row; /* Change flex-direction to 'row' */
+  justify-content: center; /* Optionally, center the profile links horizontally */
+  align-items: center; /* Optionally, center the profile links vertically */
+  gap: 20px;
 }
 
-.footer-link-group h4 {
-  color: #eeeeee;
-  font-family: 'Futura', sans-serif;
-  font-size: 16px;
-  margin-bottom: 10px;
-}
+/* Individual hover effects with pastel colors */
+#link-back-to-top:hover::before { background-color: #FFB6C1; } /* Light Pink */
+#link-home:hover::before { background-color: #BFD8D2; } /* Pastel Green */
+#link-login:hover::before { background-color: #FADADD; } /* Pale Pink */
 
-.footer-link-group a {
-  color: #eeeeee;
-  font-family: 'Futura', sans-serif;
-  text-decoration: none;
+#link-shop-all-stickers:hover::before { background-color: #ECD5E3; } /* Lavender */
+#link-new-arrivals:hover::before { background-color: #D8E2DC; } /* Mint Cream */
+#link-best-sellers:hover::before { background-color: #FFDFD3; } /* Peach */
+
+#link-column-stickers:hover::before { background-color: #F0E5DE; } /* Blush */
+#link-about-us:hover::before { background-color: #CEE5D0; } /* Tea Green */
+#link-how-made:hover::before { background-color: #F6E5F5; } /* Thistle */
+
+#link-sticker-care:hover::before { background-color: #FFF5BA; } /* Light Yellow */
+#link-order-tracking:hover::before { background-color: #D5E4F1; } /* Baby Blue */
+#link-returns:hover::before { background-color: #FFC0CB; } /* Pink */
+
+#link-terms:hover::before { background-color: #B0E0E6; } /* Powder Blue */
+#link-privacy:hover::before { background-color: #FED7E2; } /* Melon */
+#link-contact:hover::before { background-color: #E2F0CB; } /* Celadon */
+
+.footer-links a {
+  position: relative; /* Add this line */
+  letter-spacing: 1px;
+  padding-bottom: 10px;
   line-height: 1.5;
-  display: block;
-  margin-bottom: 5px;
+  font-size: 13px;
+  color: #ffffff;
+  font-family: "Nunito", sans-serif;
+  text-decoration: none; /* Add this line */
 }
 
-.footer-social-links {
-  flex-basis: 16.666%; /* 6th column */
-  text-align: center;
-  margin-top: 20px;
+.footer-links a::before {
+  content: '';
+  position: absolute;
+  bottom: 5px; /* Adjust the position of the underline */
+  left: 0;
+  width: 100%;
+  height: 2px; /* Adjust the thickness of the underline */
+  background-color: transparent; /* Set the initial color of the underline */
+  transform: scaleX(0); /* Initially scale the underline to 0 */
+  transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out; /* Add a transition for smooth animation */
 }
 
-.footer-social-links a {
-  display: inline-block;
-  margin-right: 10px;
+.footer-links a:hover::before {
+  transform: scaleX(1); /* Scale the underline to 100% on hover */
+  transform-origin: left; /* Start the scaling from the left */
 }
 
-.footer-social-links img {
+/* Define the pastel colors for each individual link */
+
+
+#yoimiya {
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  width: 100%;
+  height: auto;
+  max-width: 120px;
+  margin-top: -15px; /* Adjust this value */
+  margin-bottom: 0; /* Adjust this value */
+  filter: drop-shadow(10px 5px 10px rgb(105, 78, 28));
+}
+
+/* Hover links in FOoter */
+.footer-links li a [href="#back-to-top"]::before {
+  border-bottom: 1px solid #cf2020;
+}
+
+.footer-column > a > img {
+  width: 100%;
+  height: auto;
   max-width: 30px;
-  max-height: 30px;
+}
+
+/* Credit */
+#credits {
+  justify-content: center;
+  align-items: center;
+  letter-spacing: 1px;
+  font-family: 'Futura', sans-serif;
+  color: #8a8888;
+  font-size: 12px;
+  padding-top: 9px;
 }
