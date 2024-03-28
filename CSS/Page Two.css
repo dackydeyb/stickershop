@@ -616,8 +616,8 @@ footer {
 
 .footer-title {
   padding-top: 35px;
-  padding-bottom: 15px;
-  border-bottom: 1px solid #ccc;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #727272;
 }
 
 .footer-title, a, p {
@@ -647,7 +647,7 @@ footer {
   padding-top: 20px;
   padding-bottom: 10px; /* Add this line */
   gap: 30px;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid #727272;
   text-align: left;
 }
 
@@ -663,6 +663,8 @@ footer {
   letter-spacing: 1px;
   padding-bottom: 10px; 
   line-height: 1.5; 
+  font-size: 13px;
+  color: #ffffff;
 }
 
 #yoimiya {
@@ -670,19 +672,18 @@ footer {
   transform: scaleX(-1);
   width: 100%;
   height: auto;
-  max-width: 150px;
+  max-width: 120px;
   margin-top: -15px; /* Adjust this value */
   margin-bottom: 0; /* Adjust this value */
 }
 
 /* Credit */
 #credits {
-  display: flex;
   justify-content: center;
   align-items: center;
-  padding: 30px;
   letter-spacing: 1px;
   font-family: 'Futura', sans-serif;
-  color: #eeeeee;
-  font-size: 10px;
+  color: #8a8888;
+  font-size: 12px;
+  padding-top: 9px;
 }
