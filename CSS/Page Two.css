@@ -667,25 +667,25 @@ footer {
 }
 
 /* Individual hover effects with pastel colors */
-#link-back-to-top:hover::before { background-color: #FFB6C1; } /* Light Pink */
-#link-home:hover::before { background-color: #BFD8D2; } /* Pastel Green */
-#link-login:hover::before { background-color: #FADADD; } /* Pale Pink */
+#link-back-to-top:hover::before { background-color: #FF7F7F; } /* Deep Peach */
+#link-home:hover::before { background-color: #7F9F7F; } /* Dark Olive Green */
+#link-login:hover::before { background-color: #9F7F7F; } /* Dark Salmon */
 
-#link-shop-all-stickers:hover::before { background-color: #ECD5E3; } /* Lavender */
-#link-new-arrivals:hover::before { background-color: #D8E2DC; } /* Mint Cream */
-#link-best-sellers:hover::before { background-color: #FFDFD3; } /* Peach */
+#link-shop-all-stickers:hover::before { background-color: #9F7FBF; } /* Plum */
+#link-best-sellers:hover::before { background-color: #7FBF7F; } /* Dark Sea Green */
+#link-new-arrivals:hover::before { background-color: #FF9F7F; } /* Deep Orange */
 
-#link-column-stickers:hover::before { background-color: #F0E5DE; } /* Blush */
-#link-about-us:hover::before { background-color: #CEE5D0; } /* Tea Green */
-#link-how-made:hover::before { background-color: #F6E5F5; } /* Thistle */
+#link-column-stickers:hover::before { background-color: #BF9F7F; } /* Dark Tan */
+#link-about-us:hover::before { background-color: #7F9F9F; } /* Dark Slate Gray */
+#link-how-made:hover::before { background-color: #BF7FBF; } /* Dark Plum */
 
-#link-sticker-care:hover::before { background-color: #FFF5BA; } /* Light Yellow */
-#link-order-tracking:hover::before { background-color: #D5E4F1; } /* Baby Blue */
-#link-returns:hover::before { background-color: #FFC0CB; } /* Pink */
+#link-sticker-care:hover::before { background-color: #BFBF7F; } /* Dark Olive */
+#link-order-tracking:hover::before { background-color: #7F7FBF; } /* Dark Slate Blue */
+#link-returns:hover::before { background-color: #BF7F9F; } /* Dusty Rose */
 
-#link-terms:hover::before { background-color: #B0E0E6; } /* Powder Blue */
-#link-privacy:hover::before { background-color: #FED7E2; } /* Melon */
-#link-contact:hover::before { background-color: #E2F0CB; } /* Celadon */
+#link-terms:hover::before { background-color: #7F9FBF; } /* Dark Slate Blue */
+#link-privacy:hover::before { background-color: #BF7F7F; } /* Dark Salmon */
+#link-contact:hover::before { background-color: #9FBF7F; } /* Dark Olive Green */
 
 .footer-links a {
   position: relative; /* Add this line */
