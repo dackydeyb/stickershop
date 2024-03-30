@@ -5,6 +5,11 @@
   overflow: hidden;
 }
 
+html {
+  scroll-behavior: smooth;
+  /* scroll-padding: 10rem; */
+}
+
 @font-face {
   font-family: 'Playtime';
   src: url('Fonts/playtime/Playtime.otf') format('opentype');
@@ -185,13 +190,14 @@ nav {
   background-size: cover;
 }
 
+/* Second Section */
 .two {
-  background: #0F3460;
+  background: rgb(15,52,96);
+  background: linear-gradient(180deg, rgba(15,52,96,1) 97%, #F0F8FF 100%); 
   display: flex;
   flex-direction: column;
   align-items: center;
   padding-top: 120px;
-  margin-bottom: 305px;
 }
 
 .title-category {
@@ -604,6 +610,53 @@ background: linear-gradient(to left, #0F3460 0%, rgba(255,255,255,0) 100%);
   width: 0;
 }
 
+
+
+/* Third Section */
+.three {
+  background: #F0F8FF;
+  margin-bottom: 305px;
+}
+
+.vinyl-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5%;
+  padding: 0 250px;
+}
+
+#vinyl-image {
+  width: 500px; /* This sets the width of the image */
+  height: auto; /* This ensures the height adjusts to maintain the aspect ratio */
+}
+
+.vinyl-content {
+
+}
+
+.vinyl-content h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 3%;
+}
+
+.vinyl-content p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 3px;
+}
+
+
+
+
+
+
+
+
 /* Footer */
 footer {
   position: fixed;
@@ -621,7 +674,7 @@ footer {
   border-bottom: 1px solid #494949;
 }
 
-.footer-title, a, p {
+.footer-title #footer-title-link, #footer-title-p {
   flex-direction: column;
   display: flex;
   justify-content: center;
@@ -718,7 +771,7 @@ footer {
 #link-privacy:hover::before { background-color: #BF7F7F; } /* Dark Salmon */
 #link-contact:hover::before { background-color: #9FBF7F; } /* Dark Olive Green */
 
-#yoimiya {
+#furina {
   -webkit-transform: scaleX(-1);
   transform: scaleX(-1);
   width: 100%;
@@ -726,7 +779,8 @@ footer {
   max-width: 120px;
   margin-top: -15px; /* Adjust this value */
   margin-bottom: 0; /* Adjust this value */
-  filter: drop-shadow(10px 5px 10px rgb(105, 78, 28));
+  filter: drop-shadow(10px 5px 10px rgb(25, 79, 150));
+  border-radius: 7px;
 }
 
 .footer-column > a > img {
