@@ -193,7 +193,7 @@ nav {
 /* Second Section */
 .two {
   background: rgb(15,52,96);
-  background: linear-gradient(180deg, rgba(15,52,96,1) 97%, #F0F8FF 100%); 
+  /* background: linear-gradient(180deg, rgba(15,52,96,1) 97%, #F0F8FF 100%);  */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -614,41 +614,466 @@ background: linear-gradient(to left, #0F3460 0%, rgba(255,255,255,0) 100%);
 
 /* Third Section */
 .three {
+  display: flex;
+  justify-content: space-between;
   background: #F0F8FF;
-  margin-bottom: 305px;
+  /* padding: 0 auto; */
+  background-image: url('../Section Background/third.png'); /* Path to the image */
+  background-size: cover; /* This will cover the entire section with your image */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  background-position: center; /* Centers the image in the section */
+}
+
+.leftside-stickers {
+  display: flex; /* Establishes a flexbox layout */
+  flex-direction: column; /* Aligns children in a column */
+  align-items: flex-start; /* Aligns children to the start of the flex container, i.e., left side */
+}
+
+.leftside-stickers ul > li {
+  padding-bottom: 40px;
+}
+
+.leftside-stickers img {
+  width: 100px; /* Resizes images to be 100px wide */
+  height: auto; /* Maintains aspect ratio */
+}
+
+/* Angling specific images using nth-child to select which item to rotate */
+.leftside-stickers ul li:nth-child(1) img {
+  margin-left: -16px;
+  transform: rotate(-25deg); /* Rotates the first image slightly to the left */
+}
+
+.leftside-stickers ul li:nth-child(2) img {
+  margin-left: -50px;
+  padding-bottom: 20px;
+  transform: rotate(25deg); /* Rotates the first image slightly to the left */
+}
+
+.leftside-stickers ul li:nth-child(3) img {
+  transform: rotate(15deg); /* Rotates the third image slightly to the right */
+}
+
+.leftside-stickers ul li:nth-child(4) img {
+  margin-left: -80px;
+  transform: rotate(7deg); /* Rotates the first image slightly to the left */
+}
+
+.leftside-stickers ul li:nth-child(5) img {
+  transform: rotate(-7deg); /* Rotates the fifth image slightly to the left */
+}
+
+.rightside-stickers {
+  display: flex; /* Establishes a flexbox layout */
+  flex-direction: column; /* Aligns children in a column */
+  align-items: flex-end; /* Aligns children to the start of the flex container, i.e., left side */
+}
+
+.rightside-stickers img {
+  width: 100px; /* Resizes images to be 100px wide */
+  height: auto; /* Maintains aspect ratio */
+}
+
+.rightside-stickers ul > li {
+  padding-bottom: 50px;
+  margin-right: -50px;
+}
+
+.rightside-stickers ul li:nth-child(1) img {
+  margin-left: -16px;
+}
+
+.rightside-stickers ul li:nth-child(2) img {
+  margin-left: 50px;
+  transform: rotate(25deg); /* Rotates the first image slightly to the left */
+}
+
+.rightside-stickers ul li:nth-child(3) img {
+  margin-left: 30px;
+  transform: rotate(15deg); /* Rotates the third image slightly to the right */
+}
+
+.rightside-stickers ul li:nth-child(4) img {
+  margin-left: 50px;
+  transform: rotate(-9deg); /* Rotates the first image slightly to the left */
+}
+
+.leftside-stickers ul li:nth-child(5) img {
+  transform: rotate(-7deg); /* Rotates the fifth image slightly to the left */
 }
 
 .vinyl-container {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 5%;
-  padding: 0 250px;
+  /* border: 1px solid purple; */
 }
 
-#vinyl-image {
-  width: 500px; /* This sets the width of the image */
-  height: auto; /* This ensures the height adjusts to maintain the aspect ratio */
-}
-
-.vinyl-content {
-
-}
-
-.vinyl-content h1 {
+.vinyl-text-container {
+  flex-basis: 50%; /* Adjust the width as necessary */
+  padding: 20px; /* Adjust the padding as necessary */
+  box-sizing: border-box; /* Makes sure padding doesn't affect width */
   display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-bottom: 3%;
+  flex-direction: column; /* Stacks the children vertically */
+  justify-content: center; /* Centers children vertically */
+  align-items: center; /* Centers children horizontally */
 }
 
-.vinyl-content p {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.vinyl-text-container #third-vinyl-h1 {
+  color: #313638; /* Change as per your design */
+  letter-spacing: 5px;
+  font-size: 100px;
+  font-family: "Madimi One", sans-serif;
   text-align: center;
-  letter-spacing: 3px;
+  margin-bottom: 30px; /* Adjust space between h1 and p */
+  margin-top: -90px;
 }
+
+.vinyl-text-container #third-vinyl-p {
+  padding: 0 70px;
+  color: #313638;
+  text-indent: 45px;
+  line-height: 1.8;
+  font-size: 20px;
+  letter-spacing: 1px;
+  font-family: 'Futura', sans-serif;
+  margin-bottom: 30px; /* Adjust space between p and button */
+}
+
+.vinyl-image-container {
+  flex-basis: 50%; /* Adjust the width as necessary */
+  padding: 20px; /* Adjust the padding as necessary */
+  display: flex; /* Use flexbox to arrange images */
+  flex-wrap: wrap; /* Allows multiple lines of images */
+  align-items: center; /* Centers images vertically */
+  justify-content: center; /* Centers images horizontally */
+  gap: 10px; /* Adjust the gap between images */
+}
+
+.vinyl-image-container #third-vinyl-image {
+  border-radius: 5px 20px 5px;
+  max-width: 500px; /* Adjust as necessary */
+  max-height: 500px; /* Adjust as necessary */
+  object-fit: contain; /* Ensures images keep their aspect ratio */
+}
+
+
+/* Buy Now Link */
+.buynow-container-vinyl {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 2px;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+#buynow-intro-vinyl {
+  text-align: center;
+  color: #f8f8f8;
+  font-family: 'Futura', sans-serif;
+  font-size: 20px;
+  /* padding-bottom: 20px; */
+  
+}
+
+.fancy-vinyl {
+  font-family: 'Futura', sans-serif;
+  margin-bottom: -50px;
+  background-color: transparent;
+  border: 2px solid #1d1d1d;
+  border-radius: 25;
+  box-sizing: border-box;
+  color: #1d1d1d;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  /* margin: 0; */
+  outline: none;
+  overflow: visible;
+  padding: 1.25em 2em;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  text-transform: none;
+  transition: all 0.3s ease-in-out;
+  user-select: none;
+  font-size: 13px;
+}
+
+.fancy-vinyl::before {
+  content: " ";
+  width: 1.5625rem;
+  height: 2px;
+  background: #1f1f1f;
+  top: 50%;
+  left: 1.5em;
+  position: absolute;
+  transform: translateY(-50%);
+  transform-origin: center;
+  transition: background 0.3s linear, width 0.3s linear;
+}
+ 
+.fancy-vinyl .text-vinyl {
+  font-size: 1.125em;
+  line-height: 1.33333em;
+  padding-left: 2em;
+  display: block;
+  text-align: left;
+  transition: all 0.3s ease-in-out;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #1f1f1f;
+}
+
+.fancy-vinyl .top-key-vinyl {
+  height: 2px;
+  width: 1.5625rem;
+  top: -2px;
+  left: 0.625rem;
+  position: absolute;
+  background: #f8f8f8;
+  transition: width 0.5s ease-out, left 0.3s ease-out;
+}
+ 
+.fancy-vinyl .bottom-key-1-vinyl {
+  height: 2px;
+  width: 1.5625rem;
+  right: 1.875rem;
+  bottom: -2px;
+  position: absolute;
+  background: #f8f8f8;
+  transition: width 0.5s ease-out, right 0.3s ease-out;
+}
+ 
+.fancy-vinyl .bottom-key-2-vinyl {
+  height: 2px;
+  width: 0.625rem;
+  right: 0.625rem;
+  bottom: -2px;
+  position: absolute;
+  background: #f8f8f8;
+  transition: width 0.5s ease-out, right 0.3s ease-out;
+}
+ 
+.fancy-vinyl:hover {
+  color: #f8f8f8;
+  background: #1d1d1d
+}
+ 
+.fancy-vinyl:hover::before {
+  width: 0.9375rem;
+  background: #f8f8f8;
+}
+ 
+.fancy-vinyl:hover .text-vinyl {
+  color: #f8f8f8;
+  padding-left: 1.5em;
+}
+ 
+.fancy-vinyl:hover .top-key-vinyl {
+  left: -2px;
+  width: 0px;
+}
+ 
+.fancy-vinyl:hover .bottom-key-1-vinyl,
+.fancy-vinyl:hover .bottom-key-2-vinyl {
+  right: 0;
+  width: 0;
+}
+
+
+
+
+
+
+
+
+.four {
+  background: #F0F8FF;
+  /* padding: 0 auto; */
+  background-image: url('../Section Background/fourth.png'); /* Path to the image */
+  background-size: cover; /* This will cover the entire section with your image */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  background-position: center; /* Centers the image in the section */
+}
+
+.holographic-container {
+  display: flex;
+  /* border: 1px solid purple; */
+}
+
+.holographic-text-container {
+  flex-basis: 50%;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.holographic-text-container #fourth-holographic-h1 {
+  font-size: 100px;
+  font-family: "Madimi One", sans-serif;
+  text-align: center;
+  margin-bottom: 30px;
+  margin-top: -90px;
+  background: linear-gradient(45deg, rgb(17, 223, 61), #adf, #f9f, rgb(102, 33, 204), rgb(41, 106, 204));
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-stroke: 2px #282a2b;
+  color: transparent; /* Hide the text color so the gradient shows through */
+  animation: moveGradient 2s infinite alternate;
+
+  /* For browsers that don't support background-clip: text */
+  -webkit-text-fill-color: transparent;
+}
+
+@keyframes moveGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+
+.holographic-text-container #fourth-holographic-p {
+  padding: 0 70px;
+  color: #313638;
+  text-indent: 45px;
+  line-height: 1.8;
+  font-size: 20px;
+  letter-spacing: 1px;
+  font-family: 'Futura', sans-serif;
+  margin-bottom: 30px;
+}
+
+.holographic-image-container {
+  flex-basis: 50%;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.holographic-image-container #fourth-holographic-image {
+  border-radius: 5px 20px 5px;
+  max-width: 500px;
+  max-height: 500px;
+  object-fit: contain;
+  box-shadow: 10px 5px 10px rgb(118, 50, 226);
+}
+
+
+
+
+
+/* Fifth Section */
+.five {
+  background: #F0F8FF;
+  background-image: url('../Section Background/fifth.png'); /* Path to the image */
+  background-size: cover; /* This will cover the entire section with your image */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  background-position: center; /* Centers the image in the section */
+}
+
+.glitter-container {
+  display: flex;
+}
+
+.glitter-text-container {
+  flex-basis: 50%; /* Adjust the width as necessary */
+  padding: 20px; /* Adjust the padding as necessary */
+  box-sizing: border-box; /* Makes sure padding doesn't affect width */
+  display: flex;
+  flex-direction: column; /* Stacks the children vertically */
+  justify-content: center; /* Centers children vertically */
+  align-items: center; /* Centers children horizontally */
+}
+
+.glitter-text-container #fifth-glitter-h1 {
+  color: #313638; /* Change as per your design */
+  letter-spacing: 5px;
+  font-size: 100px;
+  font-family: "Madimi One", sans-serif;
+  text-align: center;
+  margin-bottom: 30px; /* Adjust space between h1 and p */
+  margin-top: -90px;
+}
+
+.glitter-text-container #fifth-glitter-p {
+  padding: 0 70px;
+  color: #313638;
+  text-indent: 45px;
+  line-height: 1.8;
+  font-size: 20px;
+  letter-spacing: 1px;
+  font-family: 'Futura', sans-serif;
+  margin-bottom: 30px; /* Adjust space between p and button */
+}
+
+.glitter-image-container {
+  flex-basis: 50%; /* Adjust the width as necessary */
+  padding: 20px; /* Adjust the padding as necessary */
+  display: flex; /* Use flexbox to arrange images */
+  flex-wrap: wrap; /* Allows multiple lines of images */
+  align-items: center; /* Centers images vertically */
+  justify-content: center; /* Centers images horizontally */
+  gap: 10px; /* Adjust the gap between images */
+}
+
+.glitter-image-container #fifth-glitter-image {
+  border-radius: 5px 20px 5px;
+  max-width: 500px; /* Adjust as necessary */
+  max-height: 500px; /* Adjust as necessary */
+  object-fit: contain; /* Ensures images keep their aspect ratio */
+}
+
+
+
+.sixth {
+  background: #F0F8FF;
+  background-image: url('../Section Background/sixth.png'); /* Path to the image */
+  background-size: cover; /* This will cover the entire section with your image */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  background-position: center; /* Centers the image in the section */
+}
+
+.seventh {
+  background: #F0F8FF;
+  background-image: url('../Section Background/sixth.png'); /* Path to the image */
+  background-size: cover; /* This will cover the entire section with your image */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  background-position: center; /* Centers the image in the section */
+}
+
+.eighth {
+  background: #F0F8FF;
+  background-image: url('../Section Background/sixth.png'); /* Path to the image */
+  background-size: cover; /* This will cover the entire section with your image */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  background-position: center; /* Centers the image in the section */
+}
+
+.nineth {
+  background: #F0F8FF;
+  margin-bottom: 305px;
+  background-image: url('../Section Background/sixth.png'); /* Path to the image */
+  background-size: cover; /* This will cover the entire section with your image */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  background-position: center; /* Centers the image in the section */
+}
+
+
+
+
 
 
 
@@ -725,7 +1150,7 @@ footer {
   padding-bottom: 10px;
   line-height: 1.5;
   font-size: 13px;
-  color: #ffffff;
+  color: #f8f8f8;
   font-family: "Nunito", sans-serif;
   text-decoration: none; /* Add this line */
 }
@@ -791,6 +1216,7 @@ footer {
 
 /* Credit */
 #credits {
+  display: flex;
   justify-content: center;
   align-items: center;
   letter-spacing: 1px;
