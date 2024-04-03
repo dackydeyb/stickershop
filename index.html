@@ -11,39 +11,130 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Madimi+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <main>
-        <section>
-            <div class="container">
-                <h1>Hybrid Scrolling</h1>
-                <p>Dummy text dummy text dummy text dummy text dummy text.</p>
-            </div>
-        </section>
-  
-        <div class="scroll_container">
-            <div class="sticky_wrap">
-                <div class="horizontal_scroll">
-                    <div class="scroll_contents red">
-                        <h2 class="left">Hello</h2>
-                    </div>
-                    <div class="scroll_contents yellow"></div>
-                    <div class="scroll_contents green"></div>
-                    <div class="scroll_contents blue">
-                        <h2 class="right">Goodbye</h2>
-                    </div>
-                </div>
-            </div>
+
+  <main>
+    <header>
+        <nav class="navbar">
+          <ul class="nav-list">
+            <li class="nav-item">
+              <label class="hamburger">
+                <input type="checkbox">
+                <svg viewBox="0 0 32 32">
+                  <path class="line line-top-bottom" d="M27 10 13 10C10.8 10 9 8.2 9 6 9 3.5 10.8 2 13 2 15.2 2 17 3.8 17 6L17 26C17 28.2 18.8 30 21 30 23.2 30 25 28.2 25 26 25 23.8 23.2 22 21 22L7 22"></path>
+                  <path class="line" d="M7 16 27 16"></path>
+                </svg>
+                <span class="menu-text">MENU</span>
+              </label>
+            </li>
+            <li class="nav-item" id="nav-title"><a href="#">KAWAII KINGDOM</a></li>
+            <li class="nav-item">
+              <div class="nav-search-profile">
+                <form action="submit">
+                  <div class="search-container">
+                    <img src="Elements/search.png" alt="Search-Icon" id="search-icon">
+                    <input type="text" placeholder="Search..." id="search-bar">
+                  </div>
+                </form>
+                <a href="#">
+                  <img src="Elements/profile.png" alt="Profile" id="profile-icon">
+                </a>
+              </div>
+            </li>
+          </ul>
+        </nav>
+    </header>
+        
+    <section class="one"></section>
+
+    <section>
+      <div class="container">
+        <h1>Hybrid Scrolling</h1>
+        <p>Dummy text dummy text dummy text dummy text dummy text.</p>
+      </div>
+    </section>
+
+    <div class="scroll_container">
+      <div class="sticky_wrap">
+        <div class="horizontal_scroll">
+          <div class="scroll_contents red">
+            <h2 class="left">Hello</h2>
+          </div>
+          <div class="scroll_contents yellow"></div>
+          <div class="scroll_contents green"></div>
+          <div class="scroll_contents blue">
+            <h2 class="right">Goodbye</h2>
+          </div>
         </div>
-  
-        <section>
-            <div class="container">
-                <h1>The End</h1>
-                <p>Dummy text dummy text dummy text dummy text dummy text.</p>
-            </div>
-        </section>
-  
-    </main>
+      </div>
+    </div>
+
+    <section>
+      <div class="container">
+        <h1>The End</h1>
+        <p>Dummy text dummy text dummy text dummy text dummy text.</p>
+      </div>
+    </section>
+    
+    <footer >
+      <div class="footer-title">
+        <h2 id="footer-title-h2">
+          <a href="#" id="footer-title-link">KAWAII KINGDOM</a>
+        </h2>
+        <p id="footer-title-p">A Sticker Shop</p>
+      </div>
+    
+      <ul class="footer-links">
+        <li>
+          <img id="furina" src="./Sticker/FurinaDance.gif" alt="furina-dance">
+        </li>
+        
+        <li class="footer-column">
+          <a href="#" id="link-back-to-top">BACK TO TOP</a>
+          <a href="#" id="link-home">HOME</a>
+          <a href="#" id="link-login">LOGIN</a>
+        </li>
+
+        <li class="footer-column">
+          <a href="#" id="link-shop-all-stickers">SHOP ALL STICKERS</a>
+          <a href="#" id="link-new-arrivals">NEW ARRIVALS</a>
+          <a href="#" id="link-best-sellers">BEST SELLERS</a>
+        </li>
+
+        <li class="footer-column">
+          <a href="#" id="link-column-stickers">CUSTOM STICKERS</a>
+          <a href="#" id="link-about-us">ABOUT US</a>
+          <a href="#" id="link-how-made">HOW IT'S MADE</a>
+        </li>
+
+        <li class="footer-column">
+          <a href="#" id="link-sticker-care">STICKER CARE</a>
+          <a href="#" id="link-order-tracking">ORDER TRACKING</a>
+          <a href="#" id="link-returns">RETURNS & EXCHANGES</a>
+        </li>
+
+        <li class="footer-column">
+          <a href="#" id="link-terms">TERMS OF SERVICE</a>
+          <a href="#" id="link-privacy">PRIVACY POLICY</a>
+          <a href="#" id="link-contact">CONTACT US</a>
+        </li>
+
+        <li class="footer-column">
+          <a href="https://www.facebook.com/dackydeyb"><img src="./Elements/footer-facebook.png" alt="Facebook Link"></a>
+          <a href="https://twitter.com/dackydeyb"><img src="./Elements/footer-twitter.png" alt="Twitter Profile"></a>
+          <a href="https://github.com/dackydeyb"><img src="./Elements/footer-github.png" alt="Github Profile"></a>
+          <a href="https://www.reddit.com/user/DaYousoro/"><img src="./Elements/footer-reddit.png" alt="Reddit Link"></a>
+          <a href="#"><img src="./Elements/footer-gmail.png" alt="Email"></a>
+        </li>
+      </ul>
+
+      <p id="credits">© Dave Jhared G. Paduada BSCpE II - IF</p>
+
+    </footer>
+  </main>
+
 <script src="JS/final.js"></script>
 </body>
 </html>
