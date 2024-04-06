@@ -447,6 +447,8 @@ footer {
   padding-bottom: 30px;
   line-height: 30px;
   font-size: 18px;
+  text-indent: 7%;
+  text-align: justify;
 }
 
 
@@ -600,5 +602,31 @@ footer {
 .fancy:hover .bottom-key-2 {
   right: 0;
   width: 0;
+}
+
+@keyframes floatUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.about-section, .inner-container, .donation {
+  animation: floatUp .8s ease-out forwards;
+}
+
+@keyframes floatUp {
+  from {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
