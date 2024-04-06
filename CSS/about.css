@@ -616,7 +616,7 @@ footer {
 }
 
 .about-section, .inner-container, .donation {
-  animation: floatUp .8s ease-out forwards;
+  animation: floatUp 1.3s ease-out forwards;
 }
 
 @keyframes floatUp {
