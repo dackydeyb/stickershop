@@ -7,10 +7,7 @@
   scroll-behavior: smooth;
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
-}
-
-a * {
-  text-decoration: none;
+  list-style: none;
 }
 
 ::-webkit-scrollbar {
@@ -24,103 +21,28 @@ html, body, main {
 
 body {
   background-color: #f7f7f7;
-  color: #010101;
 }
-
-.one {
-  background-color: antiquewhite;
-}
-
-
-h1 {
-  font-size: 2rem;
-}
-
-/* p {
-  width: 90%;
-  margin: 2rem 0;
-} */
 
 section {
   height: 100vh;
-}
-
-.container {
   padding: 5rem;
 }
 
-.scroll_container {
-  height: 400vh;
-}
-
-.horizontal_scroll {
-  position: absolute;
-  top: 0;
-  height: 100%;
-  width: 400vw;
-  will-change: transform;
-  display: flex;
-  justify-content: space-between;
-}
-
-.scroll_contents {
-  height: 100%;
-  width: 100vw;
-}
-
-.sticky_wrap {
-  overflow: hidden;
-  position: sticky;
-  top: 0;
-  height: 100vh;
-}
-
-.red {
-  background-color: #cf4014;
-}
-
-.yellow {
-  background-color: #ffff00;
-}
-
-.green {
-  background-color: #05ff00;
-}
-
-.blue {
-  background-color: #2835f8;
-}
-
-h2 {
-  font-size: 2rem;
-  color: #f7f7f7;
-}
-
-.left {
-  margin-top: 5vh;
-  margin-left: 5vw;
-}
-
-.right {
-  text-align: right;
-  margin-top: 85vh;
-  margin-right: 5vw;
-}
 
 /* Navigation Bar  */
 .navbar {
-  position: fixed; /* Keeps the navbar at the top */
+  position: fixed;
   top: 0;
   width: 100%;
-  transition: top 0.3s; /* Smooth transition for navbar hide and show */
-  background-color: #F8F8FF; /* Set your desired color */
+  transition: top 0.3s; 
+  background-color: #F8F8FF; 
   z-index: 10;
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Changes from 1fr auto 1fr to repeat(3, 1fr) */
+  grid-template-columns: repeat(3, 1fr);
   align-items: center;
-  /* padding: 0 3rem; */ /* You can adjust the padding as needed */
+  /* padding: 0 3rem; */
   height: 60px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Example shadow for depth */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
 .nav-list {
@@ -154,16 +76,16 @@ h2 {
 /* Menu Button */
 .hamburger {
   display: flex;
-  align-items: center; /* Aligns children vertically in the center */
-  justify-content: center; /* Centers children horizontally, remove if not needed */
+  align-items: center;
+  justify-content: center;
 }
 
 .menu-text {
-  margin-left: 10px; /* Adjust based on your design needs */
-  font-family: "Rubik", sans-serif; /* Your font choice */
-  font-size: 1rem; /* Adjust as needed */
+  margin-left: 10px; 
+  font-family: "Rubik", sans-serif; 
+  font-size: 1rem;
   cursor: pointer;
-  user-select: none; /* Prevent text selection */
+  user-select: none;
   color: #313638;
 }
 
@@ -293,21 +215,21 @@ footer {
 
 /* New styles for the list item containing profile links */
 .footer-links > li:last-child {
-  flex-direction: row; /* Change flex-direction to 'row' */
-  justify-content: center; /* Optionally, center the profile links horizontally */
-  align-items: center; /* Optionally, center the profile links vertically */
+  flex-direction: row; 
+  justify-content: center; 
+  align-items: center;
   gap: 20px;
 }
 
 .footer-links a {
-  position: relative; /* Add this line */
+  position: relative;
   letter-spacing: 1px;
   padding-bottom: 10px;
   line-height: 1.5;
   font-size: 13px;
   color: #f8f8f8;
   font-family: "Nunito", sans-serif;
-  text-decoration: none; /* Add this line */
+  text-decoration: none; 
 }
 
 /* Footer hover Links */
@@ -315,19 +237,19 @@ footer {
 .footer-links a::before {
   content: '';
   position: absolute;
-  bottom: 5px; /* Adjust the position of the underline */
+  bottom: 5px; 
   left: 0;
   width: 100%;
-  height: 2px; /* Adjust the thickness of the underline */
-  background-color: transparent; /* Set the initial color of the underline */
-  transform: scaleX(0); /* Initially scale the underline to 0 */
+  height: 2px; 
+  background-color: transparent; 
+  transform: scaleX(0); 
   transform-origin: right;
-  transition: transform 0.5s ease-in-out, background-color 0.5s ease-in-out; /* Add a transition for smooth animation */
+  transition: transform 0.5s ease-in-out, background-color 0.5s ease-in-out; 
 }
 
 .footer-links a:hover::before {
-  transform: scaleX(1); /* Scale the underline to 100% on hover */
-  transform-origin: left; /* Start the scaling from the left */
+  transform: scaleX(1); 
+  transform-origin: left; 
 }
 
 /* Individual hover effects with pastel colors */
@@ -357,8 +279,8 @@ footer {
   width: 100%;
   height: auto;
   max-width: 120px;
-  margin-top: -15px; /* Adjust this value */
-  margin-bottom: 0; /* Adjust this value */
+  margin-top: -15px; 
+  margin-bottom: 0; 
   filter: drop-shadow(7px 3px 9px rgb(25, 79, 150));
   border-radius: 7px;
 }
@@ -438,12 +360,10 @@ footer {
 .menu-title {
   margin: 0;
   text-align: center; 
-  font-size: 46px; 
+  font-size: 36px; 
   font-family: "Rubik", sans-serif;
-  color: #7e7777;
+  color: #333;
 }
-
-
 
 #left-animation, #right-animation {
   text-align: center;
@@ -455,6 +375,7 @@ footer {
   z-index: 5;
   display: none; 
 }
+
 /* Keyframes for opening animations */
 @keyframes slideInFromBottom {
   from { transform: translateY(100%); }
@@ -491,6 +412,193 @@ footer {
   animation: slideOutToBottom 0.5s forwards;
 }
 
+.intro  {
+  padding: 6rem;
+}
+
 .animate-out-right {
   animation: slideOutToTop 0.5s forwards;
 }
+
+.about-section {
+  background: url(/Elements/about-me.jpg) no-repeat left;
+  background-size: 60%;
+  background-color: #ffd6a5;
+  overflow: hidden;
+  padding: 5rem 0;
+}
+
+.inner-container {
+  width: 55%;
+  float: right;
+  background-color: #fff7d4;
+  padding: 150px;
+}
+
+.inner-container h1 {
+  margin-bottom: 30px;
+  font-size: 30px;
+  font-weight: bold;
+  font-family: "Rubik", sans-serif;
+}
+
+.inner-container p {
+  font-family: "Nunito", sans-serif;
+  padding-bottom: 30px;
+  line-height: 30px;
+  font-size: 18px;
+}
+
+
+.skills {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+@media screen and (max-width:1200px) {
+  .inner-container {
+    padding: 80px;
+  }
+}
+
+@media screen and (max-width:1000px) {
+  .about-section {
+    background-size: 100%;
+    padding: 100px 40px;
+  }
+
+  .inner-container {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .about-section {
+    padding: 0;
+  }
+  .inner-container {
+    padding: 60px;
+  }
+}
+
+/* Donation Link */
+.donation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 2px;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+.fancy {
+  font-family: 'Futura', sans-serif;
+  margin-bottom: -50px;
+  background-color: transparent;
+  border: 2px solid #003087;
+  border-radius: 25;
+  box-sizing: border-box;
+  color: #1d1d1d;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  /* margin: 0; */
+  outline: none;
+  overflow: visible;
+  padding: 1.25em 2em;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  text-transform: none;
+  transition: all 0.3s ease-in-out;
+  user-select: none;
+  font-size: 13px;
+}
+
+.fancy::before {
+  content: " ";
+  width: 1.5625rem;
+  height: 2px;
+  background: #003087;
+  top: 50%;
+  left: 1.5em;
+  position: absolute;
+  transform: translateY(-50%);
+  transform-origin: center;
+  transition: background 0.3s linear, width 0.3s linear;
+}
+ 
+.fancy .text {
+  font-size: 1.125em;
+  font-family: "Nunito", sans-serif;;
+  line-height: 1.33333em;
+  padding-left: 2em;
+  display: block;
+  text-align: left;
+  transition: all 0.3s ease-in-out;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #002569;
+}
+
+.fancy .top-key {
+  height: 2px;
+  width: 1.5625rem;
+  top: -2px;
+  left: 0.625rem;
+  position: absolute;
+  background: #fff7d4;
+  transition: width 0.5s ease-out, left 0.3s ease-out;
+}
+ 
+.fancy .bottom-key-1 {
+  height: 2px;
+  width: 1.5625rem;
+  right: 1.875rem;
+  bottom: -2px;
+  position: absolute;
+  background: #fff7d4;
+  transition: width 0.5s ease-out, right 0.3s ease-out;
+}
+ 
+.fancy .bottom-key-2 {
+  height: 2px;
+  width: 0.625rem;
+  right: 0.625rem;
+  bottom: -2px;
+  position: absolute;
+  background: #fff7d4;
+  transition: width 0.5s ease-out, right 0.3s ease-out;
+}
+ 
+.fancy:hover {
+  color: #f8f8f8;
+  background: #003087;
+}
+ 
+.fancy:hover::before {
+  width: 0.9375rem;
+  background: #f8f8f8;
+}
+ 
+.fancy:hover .text {
+  color: #ffffff;
+  padding-left: 1.5em;
+}
+ 
+.fancy:hover .top-key {
+  left: -2px;
+  width: 0px;
+}
+ 
+.fancy:hover .bottom-key-1,
+.fancy:hover .bottom-key-2 {
+  right: 0;
+  width: 0;
+}
+
