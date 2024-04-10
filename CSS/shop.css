@@ -478,8 +478,8 @@ footer {
   background: linear-gradient(45deg, #A8E6CF, #DCEDC1, #FFD3B6, #FFAAA5, #FF8B94);
   background-size: 200% 200%;
   animation: gradientMove 3s ease infinite;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: rgba(255, 255, 255, 0);
   -webkit-text-stroke: 1px #000;
 }
 
