@@ -86,7 +86,7 @@ section {
   margin-left: 10px; 
   font-family: "Rubik", sans-serif; 
   font-size: 1rem;
-  cursor: pointer;
+  /* cursor: pointer; */
   user-select: none;
   color: #313638;
 }
@@ -334,7 +334,7 @@ footer {
   background-size: cover;
 }
 
-@keyframes floatUpLinks {
+@keyframes floatUp {
   from {
     opacity: 0;
     transform: translateY(20px);
@@ -346,8 +346,8 @@ footer {
 }
 
 #left-animation .menu-list li {
-  opacity: 0; /* Start elements as invisible */
-  animation: floatUpLinks 0.5s ease-out forwards;
+  opacity: 0;
+  animation: floatUp 0.5s ease-out forwards;
 }
 
 #left-animation .menu-list li:nth-child(1) {
@@ -369,6 +369,37 @@ footer {
 #left-animation .menu-list li:nth-child(5) {
   animation-delay: 1s;
 }
+
+.card {
+  opacity: 0; /* Initial state: cards are invisible */
+  animation: floatUp 0.5s ease-out forwards;
+}
+
+.card:nth-of-type(1) { animation-delay: 0.3s; }
+.card:nth-of-type(2) { animation-delay: 0.4s; }
+.card:nth-of-type(3) { animation-delay: 0.5s; }
+.card:nth-of-type(4) { animation-delay: 0.6s; }
+.card:nth-of-type(5) { animation-delay: 0.7s; }
+.card:nth-of-type(6) { animation-delay: 0.8s; }
+.card:nth-of-type(7) { animation-delay: 0.9s; }
+.card:nth-of-type(8) { animation-delay: 1s; }
+.card:nth-of-type(9) { animation-delay: 1.1s; }
+.card:nth-of-type(10) { animation-delay: 1.2s; }
+.card:nth-of-type(11) { animation-delay: 1.3s; }
+.card:nth-of-type(12) { animation-delay: 1.4s; }
+.card:nth-of-type(13) { animation-delay: 1.5s; }
+.card:nth-of-type(14) { animation-delay: 1.6s; }
+.card:nth-of-type(15) { animation-delay: 1.7s; }
+.card:nth-of-type(16) { animation-delay: 1.8s; }
+.card:nth-of-type(17) { animation-delay: 1.9s; }
+.card:nth-of-type(18) { animation-delay: 2s; }
+.card:nth-of-type(19) { animation-delay: 2.1s; }
+.card:nth-of-type(20) { animation-delay: 2.2s; }
+.card:nth-of-type(21) { animation-delay: 2.3s; }
+.card:nth-of-type(22) { animation-delay: 2.4s; }
+.card:nth-of-type(23) { animation-delay: 2.5s; }
+.card:nth-of-type(24) { animation-delay: 2.6s; }
+
 
 
 /* Menu List Styles */
@@ -529,7 +560,7 @@ footer {
   color: #000;
   padding: 16px 0;
   display: block;
-  cursor: pointer;
+  /* cursor: pointer; */
 }
 
 .filter-sort,
@@ -543,6 +574,7 @@ footer {
 
 .lbl {
   font-family: "Nunito", sans-serif;
+  cursor: pointer;
 }
 
 .sort-options, .color-options, .paper-options{
@@ -551,20 +583,20 @@ footer {
 
 .rating {
   display: flex;
-  justify-content: flex-end; /* Aligns items to the right */
-  flex-direction: row-reverse; /* Reverses the order of the stars */
-  padding-left: 30px; /* Ensure some space on the left */
+  justify-content: flex-end; 
+  flex-direction: row-reverse; 
+  padding-left: 30px;
 }
 
 .rating > input {
-  display: none; /* Hides the actual radio button */
+  display: none; 
 }
 
 .rating > label {
-  cursor: pointer;
+  /* cursor: pointer; */
   font-size: 30px;
-  color: #ccc; /* Default color of stars */
-  margin-left: 5px; /* Space between stars */
+  color: #ccc; 
+  margin-left: 5px;
 }
 
 .rating > label:before {
@@ -601,7 +633,7 @@ footer {
   border-radius: 5px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: space-between;
   padding: 20px;
   gap: 10px;
 }
@@ -645,6 +677,10 @@ footer {
   font-size: 14px;
   font-weight: 400;
   color: #666;
+  min-height: 60px; /* This sets a minimum height. Adjust the value as needed. */
+  display: flex; /* This ensures that the content of .card-subtitle can use flexbox properties */
+  align-items: center; /* This vertically centers the text in the .card-subtitle div */
+  justify-content: center; /* This horizontally centers the text in the .card-subtitle div */
 }
 
 .card-divider {
@@ -658,6 +694,7 @@ footer {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  margin-top: auto;
 }
 
 .card-price {
@@ -668,9 +705,10 @@ footer {
 }
 
 .card-price span {
-  font-size: 20px;
+  font-size: 17px;
   font-weight: 500;
   color: #666;
+  font-family: "Rubik", sans-serif;
 }
 
 .card-btn {
