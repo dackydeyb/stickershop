@@ -42,7 +42,7 @@ h1 {
 } */
 
 section {
-  height: 100vh;
+  height: 100dvh;
 }
 
 .container {
@@ -109,22 +109,32 @@ h2 {
 
 /* Navigation Bar  */
 .navbar {
-  position: fixed; /* Keeps the navbar at the top */
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; /* Left content, center (title), and right content */
+  align-items: center;
+  position: fixed;
   top: 0;
   width: 100%;
-  transition: top 0.3s; /* Smooth transition for navbar hide and show */
-  background-color: #F8F8FF; /* Set your desired color */
+  background-color: #F8F8FF;
   z-index: 10;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Changes from 1fr auto 1fr to repeat(3, 1fr) */
-  align-items: center;
-  /* padding: 0 3rem; */ /* You can adjust the padding as needed */
   height: 60px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Example shadow for depth */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 0 250px;
 }
 
 .nav-list {
   display: contents;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav-item:first-child {
+  justify-self: start;
+}
+
+.nav-item:last-child {
+  justify-self: end;
 }
 
 .nav-item {
@@ -139,16 +149,21 @@ h2 {
   font-weight: 500;
   font-size: 1.5rem;
   text-align: center;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
 }
 
 .nav-item a:hover {
   color: #ff3d00;
 }
 
-#nav-title > a {
+#nav-title>a {
+
   font-family: "Rubik", sans-serif;
   color: #313638;
+}
+
+.nav-item > * {
+  margin: 0 auto;
 }
 
 /* Menu Button */
@@ -258,7 +273,7 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #ccc;
+  color: #F8F8FF;
   font-family: "Rubik", sans-serif;
 }
 
@@ -367,6 +382,16 @@ footer {
   width: 100%;
   height: auto;
   max-width: 30px;
+}
+
+.footer-column > a > img {
+  filter: grayscale(100%);
+  transition: .8s;
+}
+
+.footer-column > a > img:hover {
+  filter: grayscale(0%);
+  transition: .8s;
 }
 
 /* Credit */
