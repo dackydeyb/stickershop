@@ -783,7 +783,7 @@ footer {
 .card {
   width: 230px;
   height: 344px;
-  background: #fff;
+  background: #fafafa;
   border: 2px solid #323232;
   box-shadow: 4px 4px #323232;
   border-radius: 5px;
@@ -863,7 +863,7 @@ footer {
 
 .card-btn {
   height: 35px;
-  background: #fff;
+  background: #fafafa;
   border: 2px solid #323232;
   border-radius: 5px;
   padding: 0 15px;
