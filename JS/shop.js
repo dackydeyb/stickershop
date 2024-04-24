@@ -79,3 +79,92 @@ leftAnimation.addEventListener('animationend', handleAnimationEnd);
 rightAnimation.addEventListener('animationend', handleAnimationEnd);
 });
 
+
+// Function to convert price text to a number
+function priceToNumber(price) {
+  return Number(price.replace(/[^0-9.-]+/g,""));
+}
+
+// Function to sort cards
+function sortCards(lowToHigh) {
+  let cards = document.querySelectorAll('.card');
+  let cardsArray = Array.from(cards);
+
+  cardsArray.sort(function(a, b) {
+      let priceA = priceToNumber(a.querySelector('.card-price').textContent);
+      let priceB = priceToNumber(b.querySelector('.card-price').textContent);
+
+      if(lowToHigh) {
+          return priceA - priceB; // for low to high sort
+      } else {
+          return priceB - priceA; // for high to low sort
+      }
+  });
+
+  let parent = document.querySelector('.main-right-content');
+  parent.innerHTML = ''; // Clear the container
+
+  cardsArray.forEach(function(card) {
+      parent.appendChild(card); // Append the sorted cards
+  });
+}
+
+function sortCards(ascending) {
+  // Select the container that holds all the cards
+  var container = document.querySelector('.main-right-content'); // Adjust if necessary
+  var cards = Array.from(container.querySelectorAll('.card'));
+
+  // Sort the cards by price
+  cards.sort(function(a, b) {
+    var priceA = parseFloat(a.querySelector('.card-price').textContent.replace(/[^\d.]/g, ''));
+    var priceB = parseFloat(b.querySelector('.card-price').textContent.replace(/[^\d.]/g, ''));
+    return ascending ? priceA - priceB : priceB - priceA;
+  });
+
+  // Clear the container and append the cards in the new order
+  container.innerHTML = '';
+  cards.forEach(function(card) {
+    container.appendChild(card);
+  });
+}
+
+// Event listeners for the sort radio buttons
+document.getElementById('price-low-high').addEventListener('change', function() {
+  if(this.checked) {
+    sortCards(true); // Sort low to high
+  }
+});
+
+document.getElementById('price-high-low').addEventListener('change', function() {
+  if(this.checked) {
+    sortCards(false); // Sort high to low
+  }
+});
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Get the search bar element
+  var searchBar = document.getElementById('search-bar');
+
+  // Event listener for the search bar input
+  searchBar.addEventListener('input', function() {
+    filterCardsByName(this.value.toLowerCase()); // Convert to lower case for case-insensitive matching
+  });
+
+  // Call this function on page load to ensure correct state
+  filterCardsByName(searchBar.value.toLowerCase());
+});
+
+function filterCardsByName(searchText) {
+  var cards = document.querySelectorAll('.card');
+
+  cards.forEach(function(card) {
+    var cardTitle = card.querySelector('.card-title').textContent.toLowerCase(); // Adjust selector if necessary
+    if (cardTitle.startsWith(searchText) || searchText === '') {
+      card.style.display = ''; // Show the card
+    } else {
+      card.style.display = 'none'; // Hide the card
+    }
+  });
+}
+

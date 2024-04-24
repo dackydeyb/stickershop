@@ -396,7 +396,7 @@ footer {
 }
 
 .card {
-  opacity: 0; /* Initial state: cards are invisible */
+  opacity: 0;
   animation: floatUp 0.5s ease-out forwards;
 }
 
@@ -1015,3 +1015,4 @@ footer {
   height: 20vh;
   background-color: red;
 }
+
