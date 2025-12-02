@@ -1,0 +1,1411 @@
+/*Global Settings*/
+::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
+  overflow: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+  /* scroll-padding: 10rem; */
+}
+
+@font-face {
+  font-family: 'Playtime';
+  src: url('Fonts/playtime/Playtime.otf') format('opentype');
+  font-family: 'Futura';
+  src: url('Fonts/futura/futur.ttf') format('truetype');
+
+}
+
+* {
+  text-decoration: none;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+a {
+  color: black;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  height: 100vh;
+  position: relative;
+}
+
+section {
+  display: flex;
+  position: relative;
+  height: 100vh;
+  padding: 150px 100px 100px;
+  box-sizing: border-box;
+  z-index: 10;
+}
+
+/* Navigation Bar */
+
+nav {
+  background-color: #f5f5f5;
+  height: 7%;
+  margin: 0 auto;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 19px;
+  /* background-color: rgb(118, 118, 218); */
+  gap: 22%;
+}
+
+.nav-menu {
+  display: flex;
+  justify-content: flex-start;
+  /* background-color: aqua; */
+  width: 20%;
+}
+
+.menu-label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 15px;
+}
+
+#checkbox {
+  display: none;
+}
+
+.toggle {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  transition-duration: .5s;
+}
+
+.bars {
+  width: 100%;
+  height: 3px;
+  background-color: #1f1f1f;
+  border-radius: 4px;
+}
+
+#bar2 {
+  transition-duration: .8s;
+}
+
+#bar1,
+#bar3 {
+  width: 70%;
+}
+
+#checkbox:checked+.toggle .bars {
+  position: absolute;
+  transition-duration: .5s;
+}
+
+#checkbox:checked+.toggle #bar2 {
+  transform: scaleX(0);
+  transition-duration: .5s;
+}
+
+#checkbox:checked+.toggle #bar1 {
+  width: 100%;
+  transform: rotate(45deg);
+  transition-duration: .5s;
+}
+
+#checkbox:checked+.toggle #bar3 {
+  width: 100%;
+  transform: rotate(-45deg);
+  transition-duration: .5s;
+}
+
+#checkbox:checked+.toggle {
+  transition-duration: .5s;
+  transform: rotate(180deg);
+}
+
+.nav-title a {
+  display: flex;
+  justify-content: center;
+  color: #1f1f1f;
+  /* background-color: red; */
+}
+
+
+.nav-search-profile {
+  display: flex;
+  justify-content: flex-end;
+  /* background-color: aquamarine; */
+  width: 20%;
+}
+
+/* Navigation Bar Search Bar and Icon */
+.search-container {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 2px 8px;
+}
+
+#search-icon {
+  width: 16px;
+  height: 16px;
+  margin-right: 8px;
+}
+
+#profile-icon {
+  margin-top: 3px;
+  margin-left: 10px;
+  width: 24px;
+  height: 24px;
+}
+
+#search-bar {
+  border: none;
+  font-size: 14px;
+  padding: 4px;
+  background-color: #f5f5f5;
+}
+
+
+/* Main Content */
+.one {
+  background-image: url(../Elements/Section1.png);
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Second Section */
+.two {
+  background: rgb(15, 52, 96);
+  /* background: linear-gradient(180deg, rgba(15,52,96,1) 97%, #F0F8FF 100%);  */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 120px;
+}
+
+.title-category {
+  display: flex;
+  align-items: center;
+}
+
+.title-category h2 {
+  margin: 0;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  font-family: 'Futura', sans-serif;
+  padding-bottom: 15px;
+}
+
+.category-links {
+  display: flex;
+  /* margin-bottom: auto; */
+  padding-top: 60px;
+  justify-content: space-around;
+  width: 100%;
+  border-top: 2px solid rgb(233, 230, 230);
+}
+
+.category-links li a {
+  color: #ffeeee;
+  position: relative;
+  font-weight: bold;
+  font-family: "Madimi One", sans-serif;
+  font-size: 30px;
+  z-index: 1;
+}
+
+.category-links li a::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.5s ease-in-out;
+  z-index: -1;
+}
+
+/* Define custom properties for different pastel colors */
+.category-links li a[href="#vinyl"]::before {
+  background-color: #ffb6c1;
+}
+
+.category-links li a[href="#holographic"]::before {
+  background-color: #add8e6;
+}
+
+.category-links li a[href="#glitter"]::before {
+  background-color: #98fb98;
+}
+
+.category-links li a[href="#paper"]::before {
+  background-color: #ffd700;
+}
+
+.category-links li a[href="#die-cut"]::before {
+  background-color: #f08080;
+}
+
+.category-links li a[href="#decal"]::before {
+  background-color: #fab472;
+}
+
+.category-links li a[href="#static-cling"]::before {
+  background-color: #d8bfd8;
+}
+
+/* Change link color on hover */
+.category-links li a:hover {
+  color: #ffffff;
+}
+
+/* Scale the hover effect */
+.category-links li a:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Moving Effect */
+.slider {
+  height: 400px;
+  margin: auto;
+  /* margin-top: -70px; */
+  position: relative;
+  width: 100%;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.slide-track {
+  display: flex;
+  width: calc(250px * 16);
+  animation: scroll 140s linear infinite;
+  gap: 30px;
+}
+
+.tile:nth-child(1) .slide,
+.tile:nth-child(9) .slide {
+  background-color: #55cbcd;
+}
+
+.tile:nth-child(2) .slide,
+.tile:nth-child(10) .slide {
+  background-color: #f6eac2;
+}
+
+.tile:nth-child(3) .slide,
+.tile:nth-child(11) .slide {
+  background-color: #BFD8AF;
+}
+
+.tile:nth-child(4) .slide,
+.tile:nth-child(12) .slide {
+  background-color: #FF8080;
+}
+
+.tile:nth-child(5) .slide,
+.tile:nth-child(13) .slide {
+  background-color: #EEE0C9;
+}
+
+.tile:nth-child(6) .slide,
+.tile:nth-child(14) .slide {
+  background-color: #FFC0D9;
+}
+
+.tile:nth-child(7) .slide,
+.tile:nth-child(15) .slide {
+  background-color: #6096B4;
+}
+
+.tile:nth-child(8) .slide,
+.tile:nth-child(16) .slide {
+  background-color: #AEE2FF;
+}
+
+
+.slide-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(calc(-250px * 8));
+  }
+}
+
+.slide {
+  height: 350px;
+  width: 250px;
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  border-radius: 5px 20px 5px;
+  perspective: 100px;
+}
+
+.slide-track img {
+  width: 100%;
+  transition: 0.2s;
+  padding-top: 50px;
+  padding-right: 25px;
+  padding-bottom: 50px;
+}
+
+/* Image Hover effect */
+.slide-track img:hover {
+  transform: translateZ(25px);
+}
+
+/* Slider Gradient Shadows */
+.slider::before,
+.slider::after {
+  background: linear-gradient(to right, #0F3460 0%, rgba(255, 255, 255, 0) 100%);
+  content: '';
+  height: 100%;
+  position: absolute;
+  width: 15%;
+  z-index: 2;
+}
+
+.slider::after {
+  background: linear-gradient(to left, #0F3460 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+.slider::before {
+  left: 0;
+  top: 0;
+}
+
+.slider::after {
+  right: 0;
+  top: 0;
+  transform: rotateZ('180deg');
+}
+
+
+/* New CSS for the hover effect */
+.tile {
+  display: inline-block;
+  /* margin: 10px; */
+  text-align: left;
+  opacity: 0.99;
+  overflow: hidden;
+  position: relative;
+  border-radius: 5px 20px 5px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.05);
+}
+
+.tile:before {
+  content: '';
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 100%);
+  width: 100%;
+  height: 50%;
+  opacity: 0;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 2;
+  transition-property: top, opacity;
+  transition-duration: 0.3s;
+}
+
+.tile .details {
+  font-size: 16px;
+  font-family: 'Futura', sans-serif;
+  padding: 20px;
+  color: #fff;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 3;
+}
+
+.tile .details span {
+  display: block;
+  opacity: 0;
+  position: relative;
+  top: 100px;
+  transition-property: top, opacity;
+  transition-duration: 0.3s;
+  transition-delay: 0s;
+}
+
+.tile .details .title {
+  line-height: 1;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.tile .details .info {
+  line-height: 1.2;
+  margin-top: 5px;
+  font-size: 12px;
+}
+
+.tile:focus:before,
+.tile:focus span,
+.tile:hover:before,
+.tile:hover span {
+  opacity: 1;
+}
+
+.tile:focus:before,
+.tile:hover:before {
+  top: 50%;
+}
+
+.tile:focus span,
+.tile:hover span {
+  top: 0;
+}
+
+.tile:focus .title,
+.tile:hover .title {
+  transition-delay: 0.15s;
+}
+
+.tile:focus .info,
+.tile:hover .info {
+  transition-delay: 0.25s;
+}
+
+/* Buy Now Link */
+.buynow-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 2px;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+#buynow-intro {
+  text-align: center;
+  color: whitesmoke;
+  font-family: 'Futura', sans-serif;
+  font-size: 20px;
+  padding-bottom: 20px;
+
+}
+
+
+.fancy {
+  font-family: 'Futura', sans-serif;
+  margin-bottom: -50px;
+  background-color: transparent;
+  border: 2px solid #ffffff;
+  border-radius: 25;
+  box-sizing: border-box;
+  color: #000000;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  /* margin: 0; */
+  outline: none;
+  overflow: visible;
+  padding: 1.25em 2em;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  text-transform: none;
+  transition: all 0.3s ease-in-out;
+  user-select: none;
+  font-size: 13px;
+}
+
+.fancy::before {
+  content: " ";
+  width: 1.5625rem;
+  height: 2px;
+  background: rgb(255, 255, 255);
+  top: 50%;
+  left: 1.5em;
+  position: absolute;
+  transform: translateY(-50%);
+  transform-origin: center;
+  transition: background 0.3s linear, width 0.3s linear;
+}
+
+.fancy .text {
+  font-size: 1.125em;
+  line-height: 1.33333em;
+  padding-left: 2em;
+  display: block;
+  text-align: left;
+  transition: all 0.3s ease-in-out;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+}
+
+.fancy .top-key {
+  height: 2px;
+  width: 1.5625rem;
+  top: -2px;
+  left: 0.625rem;
+  position: absolute;
+  background: #000000;
+  transition: width 0.5s ease-out, left 0.3s ease-out;
+}
+
+.fancy .bottom-key-1 {
+  height: 2px;
+  width: 1.5625rem;
+  right: 1.875rem;
+  bottom: -2px;
+  position: absolute;
+  background: #000000;
+  transition: width 0.5s ease-out, right 0.3s ease-out;
+}
+
+.fancy .bottom-key-2 {
+  height: 2px;
+  width: 0.625rem;
+  right: 0.625rem;
+  bottom: -2px;
+  position: absolute;
+  background: #e8e8e8;
+  transition: width 0.5s ease-out, right 0.3s ease-out;
+}
+
+.fancy:hover {
+  color: rgb(0, 0, 0);
+  background: rgb(255, 255, 255);
+}
+
+.fancy:hover::before {
+  width: 0.9375rem;
+  background: rgb(0, 0, 0);
+}
+
+.fancy:hover .text {
+  color: rgb(0, 0, 0);
+  padding-left: 1.5em;
+}
+
+.fancy:hover .top-key {
+  left: -2px;
+  width: 0px;
+}
+
+.fancy:hover .bottom-key-1,
+.fancy:hover .bottom-key-2 {
+  right: 0;
+  width: 0;
+}
+
+
+
+/* Third Section */
+.three {
+  display: flex;
+  justify-content: space-between;
+  background: #F0F8FF;
+  /* padding: 0 auto; */
+  background-image: url('../Section Background/third.png');
+  /* Path to the image */
+  background-size: cover;
+  /* This will cover the entire section with your image */
+  background-repeat: no-repeat;
+  /* Prevents the image from repeating */
+  background-position: center;
+  /* Centers the image in the section */
+}
+
+.leftside-stickers {
+  display: flex;
+  /* Establishes a flexbox layout */
+  flex-direction: column;
+  /* Aligns children in a column */
+  align-items: flex-start;
+  /* Aligns children to the start of the flex container, i.e., left side */
+}
+
+.leftside-stickers ul>li {
+  padding-bottom: 40px;
+}
+
+.leftside-stickers img {
+  width: 100px;
+  /* Resizes images to be 100px wide */
+  height: auto;
+  /* Maintains aspect ratio */
+}
+
+/* Angling specific images using nth-child to select which item to rotate */
+.leftside-stickers ul li:nth-child(1) img {
+  margin-left: -16px;
+  transform: rotate(-25deg);
+  /* Rotates the first image slightly to the left */
+}
+
+.leftside-stickers ul li:nth-child(2) img {
+  margin-left: -50px;
+  padding-bottom: 20px;
+  transform: rotate(25deg);
+  /* Rotates the first image slightly to the left */
+}
+
+.leftside-stickers ul li:nth-child(3) img {
+  transform: rotate(15deg);
+  /* Rotates the third image slightly to the right */
+}
+
+.leftside-stickers ul li:nth-child(4) img {
+  margin-left: -80px;
+  transform: rotate(7deg);
+  /* Rotates the first image slightly to the left */
+}
+
+.leftside-stickers ul li:nth-child(5) img {
+  transform: rotate(-7deg);
+  /* Rotates the fifth image slightly to the left */
+}
+
+.rightside-stickers {
+  display: flex;
+  /* Establishes a flexbox layout */
+  flex-direction: column;
+  /* Aligns children in a column */
+  align-items: flex-end;
+  /* Aligns children to the start of the flex container, i.e., left side */
+}
+
+.rightside-stickers img {
+  width: 100px;
+  /* Resizes images to be 100px wide */
+  height: auto;
+  /* Maintains aspect ratio */
+}
+
+.rightside-stickers ul>li {
+  padding-bottom: 50px;
+  margin-right: -50px;
+}
+
+.rightside-stickers ul li:nth-child(1) img {
+  margin-left: -16px;
+}
+
+.rightside-stickers ul li:nth-child(2) img {
+  margin-left: 50px;
+  transform: rotate(25deg);
+  /* Rotates the first image slightly to the left */
+}
+
+.rightside-stickers ul li:nth-child(3) img {
+  margin-left: 30px;
+  transform: rotate(15deg);
+  /* Rotates the third image slightly to the right */
+}
+
+.rightside-stickers ul li:nth-child(4) img {
+  margin-left: 50px;
+  transform: rotate(-9deg);
+  /* Rotates the first image slightly to the left */
+}
+
+.leftside-stickers ul li:nth-child(5) img {
+  transform: rotate(-7deg);
+  /* Rotates the fifth image slightly to the left */
+}
+
+.vinyl-container {
+  display: flex;
+  /* border: 1px solid purple; */
+}
+
+.vinyl-text-container {
+  flex-basis: 50%;
+  /* Adjust the width as necessary */
+  padding: 20px;
+  /* Adjust the padding as necessary */
+  box-sizing: border-box;
+  /* Makes sure padding doesn't affect width */
+  display: flex;
+  flex-direction: column;
+  /* Stacks the children vertically */
+  justify-content: center;
+  /* Centers children vertically */
+  align-items: center;
+  /* Centers children horizontally */
+}
+
+.vinyl-text-container #third-vinyl-h1 {
+  color: #313638;
+  /* Change as per your design */
+  letter-spacing: 5px;
+  font-size: 100px;
+  font-family: "Madimi One", sans-serif;
+  text-align: center;
+  margin-bottom: 30px;
+  /* Adjust space between h1 and p */
+  margin-top: -90px;
+}
+
+.vinyl-text-container #third-vinyl-p {
+  padding: 0 70px;
+  color: #313638;
+  text-indent: 45px;
+  line-height: 1.8;
+  font-size: 20px;
+  letter-spacing: 1px;
+  font-family: 'Futura', sans-serif;
+  margin-bottom: 30px;
+  /* Adjust space between p and button */
+}
+
+.vinyl-image-container {
+  flex-basis: 50%;
+  /* Adjust the width as necessary */
+  padding: 20px;
+  /* Adjust the padding as necessary */
+  display: flex;
+  /* Use flexbox to arrange images */
+  flex-wrap: wrap;
+  /* Allows multiple lines of images */
+  align-items: center;
+  /* Centers images vertically */
+  justify-content: center;
+  /* Centers images horizontally */
+  gap: 10px;
+  /* Adjust the gap between images */
+}
+
+.vinyl-image-container #third-vinyl-image {
+  border-radius: 5px 20px 5px;
+  max-width: 500px;
+  /* Adjust as necessary */
+  max-height: 500px;
+  /* Adjust as necessary */
+  object-fit: contain;
+  /* Ensures images keep their aspect ratio */
+}
+
+
+/* Buy Now Link */
+.buynow-container-vinyl {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 2px;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+#buynow-intro-vinyl {
+  text-align: center;
+  color: #f8f8f8;
+  font-family: 'Futura', sans-serif;
+  font-size: 20px;
+  /* padding-bottom: 20px; */
+
+}
+
+.fancy-vinyl {
+  font-family: 'Futura', sans-serif;
+  margin-bottom: -50px;
+  background-color: transparent;
+  border: 2px solid #1d1d1d;
+  border-radius: 25;
+  box-sizing: border-box;
+  color: #1d1d1d;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  /* margin: 0; */
+  outline: none;
+  overflow: visible;
+  padding: 1.25em 2em;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  text-transform: none;
+  transition: all 0.3s ease-in-out;
+  user-select: none;
+  font-size: 13px;
+}
+
+.fancy-vinyl::before {
+  content: " ";
+  width: 1.5625rem;
+  height: 2px;
+  background: #1f1f1f;
+  top: 50%;
+  left: 1.5em;
+  position: absolute;
+  transform: translateY(-50%);
+  transform-origin: center;
+  transition: background 0.3s linear, width 0.3s linear;
+}
+
+.fancy-vinyl .text-vinyl {
+  font-size: 1.125em;
+  line-height: 1.33333em;
+  padding-left: 2em;
+  display: block;
+  text-align: left;
+  transition: all 0.3s ease-in-out;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #1f1f1f;
+}
+
+.fancy-vinyl .top-key-vinyl {
+  height: 2px;
+  width: 1.5625rem;
+  top: -2px;
+  left: 0.625rem;
+  position: absolute;
+  background: #f8f8f8;
+  transition: width 0.5s ease-out, left 0.3s ease-out;
+}
+
+.fancy-vinyl .bottom-key-1-vinyl {
+  height: 2px;
+  width: 1.5625rem;
+  right: 1.875rem;
+  bottom: -2px;
+  position: absolute;
+  background: #f8f8f8;
+  transition: width 0.5s ease-out, right 0.3s ease-out;
+}
+
+.fancy-vinyl .bottom-key-2-vinyl {
+  height: 2px;
+  width: 0.625rem;
+  right: 0.625rem;
+  bottom: -2px;
+  position: absolute;
+  background: #f8f8f8;
+  transition: width 0.5s ease-out, right 0.3s ease-out;
+}
+
+.fancy-vinyl:hover {
+  color: #f8f8f8;
+  background: #1d1d1d
+}
+
+.fancy-vinyl:hover::before {
+  width: 0.9375rem;
+  background: #f8f8f8;
+}
+
+.fancy-vinyl:hover .text-vinyl {
+  color: #f8f8f8;
+  padding-left: 1.5em;
+}
+
+.fancy-vinyl:hover .top-key-vinyl {
+  left: -2px;
+  width: 0px;
+}
+
+.fancy-vinyl:hover .bottom-key-1-vinyl,
+.fancy-vinyl:hover .bottom-key-2-vinyl {
+  right: 0;
+  width: 0;
+}
+
+
+
+
+
+
+
+
+.four {
+  background: #F0F8FF;
+  /* padding: 0 auto; */
+  background-image: url('../Section Background/fourth.png');
+  /* Path to the image */
+  background-size: cover;
+  /* This will cover the entire section with your image */
+  background-repeat: no-repeat;
+  /* Prevents the image from repeating */
+  background-position: center;
+  /* Centers the image in the section */
+}
+
+.holographic-container {
+  display: flex;
+  /* border: 1px solid purple; */
+}
+
+.holographic-text-container {
+  flex-basis: 50%;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.holographic-text-container #fourth-holographic-h1 {
+  font-size: 100px;
+  font-family: "Madimi One", sans-serif;
+  text-align: center;
+  margin-bottom: 30px;
+  margin-top: -90px;
+  background: linear-gradient(45deg, rgb(17, 223, 61), #adf, #f9f, rgb(102, 33, 204), rgb(41, 106, 204));
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-stroke: 2px #282a2b;
+  color: transparent;
+  /* Hide the text color so the gradient shows through */
+  animation: moveGradient 2s infinite alternate;
+
+  /* For browsers that don't support background-clip: text */
+  -webkit-text-fill-color: transparent;
+}
+
+@keyframes moveGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+
+.holographic-text-container #fourth-holographic-p {
+  padding: 0 70px;
+  color: #313638;
+  text-indent: 45px;
+  line-height: 1.8;
+  font-size: 20px;
+  letter-spacing: 1px;
+  font-family: 'Futura', sans-serif;
+  margin-bottom: 30px;
+}
+
+.holographic-image-container {
+  flex-basis: 50%;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.holographic-image-container #fourth-holographic-image {
+  border-radius: 5px 20px 5px;
+  max-width: 500px;
+  max-height: 500px;
+  object-fit: contain;
+  box-shadow: 10px 5px 10px rgb(118, 50, 226);
+}
+
+
+
+
+
+/* Fifth Section */
+.five {
+  background: #F0F8FF;
+  background-image: url('../Section Background/fifth.png');
+  /* Path to the image */
+  background-size: cover;
+  /* This will cover the entire section with your image */
+  background-repeat: no-repeat;
+  /* Prevents the image from repeating */
+  background-position: center;
+  /* Centers the image in the section */
+}
+
+.glitter-container {
+  display: flex;
+}
+
+.glitter-text-container {
+  flex-basis: 50%;
+  /* Adjust the width as necessary */
+  padding: 20px;
+  /* Adjust the padding as necessary */
+  box-sizing: border-box;
+  /* Makes sure padding doesn't affect width */
+  display: flex;
+  flex-direction: column;
+  /* Stacks the children vertically */
+  justify-content: center;
+  /* Centers children vertically */
+  align-items: center;
+  /* Centers children horizontally */
+}
+
+.glitter-text-container #fifth-glitter-h1 {
+  color: #313638;
+  /* Change as per your design */
+  letter-spacing: 5px;
+  font-size: 100px;
+  font-family: "Madimi One", sans-serif;
+  text-align: center;
+  margin-bottom: 30px;
+  /* Adjust space between h1 and p */
+  margin-top: -90px;
+}
+
+.glitter-text-container #fifth-glitter-p {
+  padding: 0 70px;
+  color: #313638;
+  text-indent: 45px;
+  line-height: 1.8;
+  font-size: 20px;
+  letter-spacing: 1px;
+  font-family: 'Futura', sans-serif;
+  margin-bottom: 30px;
+  /* Adjust space between p and button */
+}
+
+.glitter-image-container {
+  flex-basis: 50%;
+  /* Adjust the width as necessary */
+  padding: 20px;
+  /* Adjust the padding as necessary */
+  display: flex;
+  /* Use flexbox to arrange images */
+  flex-wrap: wrap;
+  /* Allows multiple lines of images */
+  align-items: center;
+  /* Centers images vertically */
+  justify-content: center;
+  /* Centers images horizontally */
+  gap: 10px;
+  /* Adjust the gap between images */
+}
+
+.glitter-image-container #fifth-glitter-image {
+  border-radius: 5px 20px 5px;
+  max-width: 500px;
+  /* Adjust as necessary */
+  max-height: 500px;
+  /* Adjust as necessary */
+  object-fit: contain;
+  /* Ensures images keep their aspect ratio */
+}
+
+
+
+.sixth {
+  background: #F0F8FF;
+  background-image: url('../Section Background/sixth.png');
+  /* Path to the image */
+  background-size: cover;
+  /* This will cover the entire section with your image */
+  background-repeat: no-repeat;
+  /* Prevents the image from repeating */
+  background-position: center;
+  /* Centers the image in the section */
+}
+
+.seventh {
+  background: #F0F8FF;
+  background-image: url('../Section Background/sixth.png');
+  /* Path to the image */
+  background-size: cover;
+  /* This will cover the entire section with your image */
+  background-repeat: no-repeat;
+  /* Prevents the image from repeating */
+  background-position: center;
+  /* Centers the image in the section */
+}
+
+.eighth {
+  background: #F0F8FF;
+  background-image: url('../Section Background/sixth.png');
+  /* Path to the image */
+  background-size: cover;
+  /* This will cover the entire section with your image */
+  background-repeat: no-repeat;
+  /* Prevents the image from repeating */
+  background-position: center;
+  /* Centers the image in the section */
+}
+
+.nineth {
+  background: #F0F8FF;
+  margin-bottom: 305px;
+  background-image: url('../Section Background/sixth.png');
+  /* Path to the image */
+  background-size: cover;
+  /* This will cover the entire section with your image */
+  background-repeat: no-repeat;
+  /* Prevents the image from repeating */
+  background-position: center;
+  /* Centers the image in the section */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Footer */
+footer {
+  position: fixed;
+  bottom: 0;
+  z-index: -1;
+  width: 100%;
+  height: 305px;
+  padding: 0 250px;
+  background: #1d1d1d;
+}
+
+.footer-title {
+  padding-top: 35px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #494949;
+}
+
+.footer-title #footer-title-link,
+#footer-title-p {
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #F8F8FF;
+  font-family: 'Futura', sans-serif;
+}
+
+.footer-title>#footer-title-h2,
+#footer-title-link {
+  letter-spacing: 2px;
+}
+
+.footer-title>#footer-title-p {
+  padding-top: 5px;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+/* Footer Links */
+.footer-links {
+  display: grid;
+  grid-template-columns: auto repeat(5, 1fr) auto;
+  /* Added an extra 'auto' column for profile links */
+  align-items: center;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  gap: 30px;
+  border-bottom: 1px solid #494949;
+  text-align: left;
+}
+
+.footer-links>li {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* New styles for the list item containing profile links */
+.footer-links>li:last-child {
+  flex-direction: row;
+  /* Change flex-direction to 'row' */
+  justify-content: center;
+  /* Optionally, center the profile links horizontally */
+  align-items: center;
+  /* Optionally, center the profile links vertically */
+  gap: 20px;
+}
+
+.footer-links a {
+  position: relative;
+  /* Add this line */
+  letter-spacing: 1px;
+  padding-bottom: 10px;
+  line-height: 1.5;
+  font-size: 13px;
+  color: #f8f8f8;
+  font-family: "Nunito", sans-serif;
+  text-decoration: none;
+  /* Add this line */
+}
+
+/* Footer hover Links */
+
+.footer-links a::before {
+  content: '';
+  position: absolute;
+  bottom: 5px;
+  /* Adjust the position of the underline */
+  left: 0;
+  width: 100%;
+  height: 2px;
+  /* Adjust the thickness of the underline */
+  background-color: transparent;
+  /* Set the initial color of the underline */
+  transform: scaleX(0);
+  /* Initially scale the underline to 0 */
+  transform-origin: right;
+  transition: transform 0.5s ease-in-out, background-color 0.5s ease-in-out;
+  /* Add a transition for smooth animation */
+}
+
+.footer-links a:hover::before {
+  transform: scaleX(1);
+  /* Scale the underline to 100% on hover */
+  transform-origin: left;
+  /* Start the scaling from the left */
+}
+
+/* Individual hover effects with pastel colors */
+#link-back-to-top:hover::before {
+  background-color: #FF7F7F;
+}
+
+/* Deep Peach */
+#link-home:hover::before {
+  background-color: #7F9F7F;
+}
+
+/* Dark Olive Green */
+#link-login:hover::before {
+  background-color: #9F7F7F;
+}
+
+/* Dark Salmon */
+
+#link-shop-all-stickers:hover::before {
+  background-color: #9F7FBF;
+}
+
+/* Plum */
+#link-best-sellers:hover::before {
+  background-color: #7FBF7F;
+}
+
+/* Dark Sea Green */
+#link-new-arrivals:hover::before {
+  background-color: #FF9F7F;
+}
+
+/* Deep Orange */
+
+#link-column-stickers:hover::before {
+  background-color: #BF9F7F;
+}
+
+/* Dark Tan */
+#link-about-us:hover::before {
+  background-color: #7F9F9F;
+}
+
+/* Dark Slate Gray */
+#link-how-made:hover::before {
+  background-color: #BF7FBF;
+}
+
+/* Dark Plum */
+
+#link-sticker-care:hover::before {
+  background-color: #BFBF7F;
+}
+
+/* Dark Olive */
+#link-order-tracking:hover::before {
+  background-color: #7F7FBF;
+}
+
+/* Dark Slate Blue */
+#link-returns:hover::before {
+  background-color: #BF7F9F;
+}
+
+/* Dusty Rose */
+
+#link-terms:hover::before {
+  background-color: #7F9FBF;
+}
+
+/* Dark Slate Blue */
+#link-privacy:hover::before {
+  background-color: #BF7F7F;
+}
+
+/* Dark Salmon */
+#link-contact:hover::before {
+  background-color: #9FBF7F;
+}
+
+/* Dark Olive Green */
+
+#furina {
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  width: 100%;
+  height: auto;
+  max-width: 120px;
+  margin-top: -15px;
+  /* Adjust this value */
+  margin-bottom: 0;
+  /* Adjust this value */
+  filter: drop-shadow(10px 5px 10px rgb(25, 79, 150));
+  border-radius: 7px;
+}
+
+.footer-column>a>img {
+  width: 100%;
+  height: auto;
+  max-width: 30px;
+}
+
+.footer-column>a>img {
+  filter: grayscale(100%);
+  transition: .8s;
+}
+
+.footer-column>a>img:hover {
+  filter: grayscale(0%);
+  transition: .8s;
+}
+
+/* Credit */
+#credits {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: 1px;
+  font-family: 'Futura', sans-serif;
+  color: #8a8888;
+  font-size: 12px;
+  padding-top: 9px;
+}
