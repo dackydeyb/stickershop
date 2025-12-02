@@ -1,0 +1,558 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  text-decoration: none;
+  font-family: 'IBM Plex Mono';
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+a * {
+  text-decoration: none;
+}
+
+::-webkit-scrollbar {
+  display: none; /* Chrome */
+}
+
+html, body, main {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background-color: #f7f7f7;
+  color: #010101;
+}
+
+.one {
+  background-color: antiquewhite;
+}
+
+
+h1 {
+  font-size: 2rem;
+}
+
+/* p {
+  width: 90%;
+  margin: 2rem 0;
+} */
+
+section {
+  height: 100dvh;
+}
+
+.container {
+  padding: 5rem;
+}
+
+.scroll_container {
+  height: 400vh;
+}
+
+.horizontal_scroll {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 400vw;
+  will-change: transform;
+  display: flex;
+  justify-content: space-between;
+}
+
+.scroll_contents {
+  height: 100%;
+  width: 100vw;
+}
+
+.sticky_wrap {
+  overflow: hidden;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+
+.red {
+  background-color: #cf4014;
+}
+
+.yellow {
+  background-color: #ffff00;
+}
+
+.green {
+  background-color: #05ff00;
+}
+
+.blue {
+  background-color: #2835f8;
+}
+
+h2 {
+  font-size: 2rem;
+  color: #f7f7f7;
+}
+
+.left {
+  margin-top: 5vh;
+  margin-left: 5vw;
+}
+
+.right {
+  text-align: right;
+  margin-top: 85vh;
+  margin-right: 5vw;
+}
+
+/* Navigation Bar  */
+.navbar {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; /* Left content, center (title), and right content */
+  align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #F8F8FF;
+  z-index: 10;
+  height: 60px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 0 250px;
+  transition: top 0.3s;
+}
+
+.nav-list {
+  display: contents;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav-item:first-child {
+  justify-self: start;
+}
+
+.nav-item:last-child {
+  justify-self: end;
+}
+
+.nav-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Futura', sans-serif;
+}
+
+.nav-item a {
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.5rem;
+  text-align: center;
+  letter-spacing: 2px;
+}
+
+.nav-item a:hover {
+  color: #ff3d00;
+}
+
+#nav-title>a {
+
+  font-family: "Rubik", sans-serif;
+  color: #313638;
+}
+
+.nav-item > * {
+  margin: 0 auto;
+}
+
+/* Menu Button */
+.hamburger {
+  display: flex;
+  align-items: center; /* Aligns children vertically in the center */
+  justify-content: center; /* Centers children horizontally, remove if not needed */
+}
+
+.menu-text {
+  margin-left: 10px; /* Adjust based on your design needs */
+  font-family: "Rubik", sans-serif; /* Your font choice */
+  font-size: 1rem; /* Adjust as needed */
+  cursor: pointer;
+  user-select: none; /* Prevent text selection */
+  color: #313638;
+}
+
+
+.hamburger input {
+  display: none;
+}
+
+.hamburger svg {
+  height: 30px;
+  transition: transform 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.line {
+  fill: none;
+  stroke: rgb(56, 56, 56);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 3;
+  /* Define the transition for transforming the Stroke */
+  transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+              stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.line-top-bottom {
+  stroke-dasharray: 12 63;
+}
+
+.hamburger input:checked + svg {
+  transform: rotate(-45deg);
+}
+
+.hamburger input:checked + svg .line-top-bottom {
+  stroke-dasharray: 20 300;
+  stroke-dashoffset: -32.42;
+}
+
+
+
+/* Navigation Bar Search Bar and Icon */
+.nav-search-profile {
+  display: flex;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 2px 8px;
+}
+
+#search-icon {
+  width: 16px;
+  height: 16px;
+  margin-right: 8px;
+}
+
+#profile-icon {
+  margin-top: 3px;
+  margin-left: 10px;
+  width: 24px;
+  height: 24px;
+}
+
+#search-bar {
+  border: none;
+  font-size: 14px;
+  padding: 4px;
+  background-color: #F8F8FF;
+  font-family: "Rubik", sans-serif;
+}
+
+/* Footer */
+footer {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  height: 305px; 
+  padding: 0 90px;
+  background: #1d1d1d;
+}
+
+.footer-title {
+  padding-top: 35px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #494949;
+}
+
+.footer-title #footer-title-link, #footer-title-p {
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #F8F8FF;
+  font-family: "Rubik", sans-serif;
+}
+
+.footer-title > #footer-title-h2, #footer-title-link {
+  letter-spacing: 2px;
+  font-weight: 400;
+}
+
+.footer-title > #footer-title-p {
+  padding-top: 5px;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+/* Footer Links */
+.footer-links {
+  display: grid;
+  grid-template-columns: auto repeat(5, 1fr) auto; /* Added an extra 'auto' column for profile links */
+  align-items: center;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  gap: 30px;
+  border-bottom: 1px solid #494949;
+  text-align: left;
+}
+
+.footer-links > li {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* New styles for the list item containing profile links */
+.footer-links > li:last-child {
+  flex-direction: row; /* Change flex-direction to 'row' */
+  justify-content: center; /* Optionally, center the profile links horizontally */
+  align-items: center; /* Optionally, center the profile links vertically */
+  gap: 20px;
+}
+
+.footer-links a {
+  position: relative; /* Add this line */
+  letter-spacing: 1px;
+  padding-bottom: 10px;
+  line-height: 1.5;
+  font-size: 13px;
+  color: #f8f8f8;
+  font-family: "Nunito", sans-serif;
+  text-decoration: none; /* Add this line */
+}
+
+/* Footer hover Links */
+
+.footer-links a::before {
+  content: '';
+  position: absolute;
+  bottom: 5px; /* Adjust the position of the underline */
+  left: 0;
+  width: 100%;
+  height: 2px; /* Adjust the thickness of the underline */
+  background-color: transparent; /* Set the initial color of the underline */
+  transform: scaleX(0); /* Initially scale the underline to 0 */
+  transform-origin: right;
+  transition: transform 0.5s ease-in-out, background-color 0.5s ease-in-out; /* Add a transition for smooth animation */
+}
+
+.footer-links a:hover::before {
+  transform: scaleX(1); /* Scale the underline to 100% on hover */
+  transform-origin: left; /* Start the scaling from the left */
+}
+
+/* Individual hover effects with pastel colors */
+#link-back-to-top:hover::before { background-color: #FF7F7F; } /* Deep Peach */
+#link-home:hover::before { background-color: #7F9F7F; } /* Dark Olive Green */
+#link-login:hover::before { background-color: #9F7F7F; } /* Dark Salmon */
+
+#link-shop-all-stickers:hover::before { background-color: #9F7FBF; } /* Plum */
+#link-best-sellers:hover::before { background-color: #7FBF7F; } /* Dark Sea Green */
+#link-new-arrivals:hover::before { background-color: #FF9F7F; } /* Deep Orange */
+
+#link-column-stickers:hover::before { background-color: #BF9F7F; } /* Dark Tan */
+#link-about-us:hover::before { background-color: #7F9F9F; } /* Dark Slate Gray */
+#link-how-made:hover::before { background-color: #BF7FBF; } /* Dark Plum */
+
+#link-sticker-care:hover::before { background-color: #BFBF7F; } /* Dark Olive */
+#link-order-tracking:hover::before { background-color: #7F7FBF; } /* Dark Slate Blue */
+#link-returns:hover::before { background-color: #BF7F9F; } /* Dusty Rose */
+
+#link-terms:hover::before { background-color: #7F9FBF; } /* Dark Slate Blue */
+#link-privacy:hover::before { background-color: #BF7F7F; } /* Dark Salmon */
+#link-contact:hover::before { background-color: #9FBF7F; } /* Dark Olive Green */
+
+#furina {
+  /* -webkit-transform: scaleX(-1); */
+  transform: scaleX(-1);
+  width: 100%;
+  height: auto;
+  max-width: 120px;
+  margin-top: -15px; /* Adjust this value */
+  margin-bottom: 0; /* Adjust this value */
+  filter: drop-shadow(7px 3px 9px rgb(25, 79, 150));
+  border-radius: 7px;
+}
+
+.footer-column > a > img {
+  width: 100%;
+  height: auto;
+  max-width: 30px;
+}
+
+.footer-column > a > img {
+  filter: grayscale(100%);
+  transition: .8s;
+}
+
+.footer-column > a > img:hover {
+  filter: grayscale(0%);
+  transition: .8s;
+}
+
+/* Credit */
+#credits {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: 1px;
+  font-family: 'Futura', sans-serif;
+  color: #8a8888;
+  font-size: 12px;
+  padding-top: 9px;
+}
+
+/* Side Animations */
+.side-animation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center; 
+  position: fixed; 
+  top: 0;
+  width: 50%; 
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 5; 
+  display: none; 
+}
+
+/* Separate background colors for each */
+#left-animation {
+  left: 0;
+  background-color: #EBE2E3; 
+}
+
+#right-animation {
+  right: 0;
+  background-color: #ececfa;
+  background-image: url(../Elements/menu-bg.png);
+  background-repeat: none; 
+  background-size: cover;
+}
+@keyframes floatUpLinks {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#left-animation .menu-list li {
+  opacity: 0; /* Start elements as invisible */
+  animation: floatUpLinks 0.5s ease-out forwards;
+}
+
+#left-animation .menu-list li:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+#left-animation .menu-list li:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+#left-animation .menu-list li:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+#left-animation .menu-list li:nth-child(4) {
+  animation-delay: 0.8s;
+}
+
+#left-animation .menu-list li:nth-child(5) {
+  animation-delay: 1s;
+}
+
+
+/* Menu List Styles */
+.menu-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 24px;
+}
+
+.menu-list li {
+  margin: 0.5em 0;
+}
+
+.menu-list li a {
+  color: #5f1212;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-family: "Nunito", sans-serif;
+  font-weight: bold;
+}
+
+.menu-list li a:hover {
+  color: #666;
+}
+
+/* Menu Title Styles */
+.menu-title {
+  margin: 0;
+  text-align: center; 
+  font-size: 46px; 
+  font-family: "Rubik", sans-serif;
+  color: #7e7777;
+}
+
+
+
+#left-animation, #right-animation {
+  text-align: center;
+  position: fixed;
+  padding: 5rem;
+  top: 0;
+  height: 100vh;
+  width: 50vw;
+  z-index: 5;
+  display: none; 
+}
+/* Keyframes for opening animations */
+@keyframes slideInFromBottom {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+@keyframes slideInFromTop {
+  from { transform: translateY(-100%); }
+  to { transform: translateY(0); }
+}
+
+/* Keyframes for closing animations */
+@keyframes slideOutToBottom {
+  from { transform: translateY(0); }
+  to { transform: translateY(100%); }
+}
+
+@keyframes slideOutToTop {
+  from { transform: translateY(0); }
+  to { transform: translateY(-100%); }
+}
+
+/* Classes to start the animations */
+.animate-in-left {
+  animation: slideInFromBottom 0.5s forwards;
+}
+
+.animate-in-right {
+  animation: slideInFromTop 0.5s forwards;
+}
+
+/* Classes to start the reverse (closing) animations */
+.animate-out-left {
+  animation: slideOutToBottom 0.5s forwards;
+}
+
+.animate-out-right {
+  animation: slideOutToTop 0.5s forwards;
+}
