@@ -11,6 +11,13 @@ It is not a real e-commerce platform. It **does not** include real money process
 ## 🌐 Live Demo
 Check out the live website here: [https://kawaiikingdom.infinityfree.me](https://kawaiikingdom.infinityfree.me)
 
+You are welcome to **sign up** as a new user to test the customer features.
+
+**🔑 Admin Login Credentials:**
+To test the admin dashboard, use the following details:
+- **Email:** `admin@admin.com`
+- **Password:** `admin`
+
 ---
 
 ## 💻 How to Run This Project Locally
